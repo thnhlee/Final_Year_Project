@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 5142917329896690068}
   - component: {fileID: 6267082725667217638}
   - component: {fileID: 7206801787047212271}
+  - component: {fileID: -1363989976113815521}
+  - component: {fileID: -5871683440634161052}
+  - component: {fileID: 5498438660578693606}
   - component: {fileID: 6917913585840731991}
   m_Layer: 0
   m_Name: Blue Slime
@@ -147,7 +150,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -176,6 +179,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+--- !u!114 &-1363989976113815521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134995568646391848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f49b2585099814cb08fe98c062a4af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 3
+--- !u!114 &-5871683440634161052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134995568646391848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b334b5a15f599b9488510d839d8bec40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.2
+--- !u!114 &5498438660578693606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134995568646391848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a432e9a6b8f222344a8ac87e88803b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitFlashMat: {fileID: 2100000, guid: 6490a9c2ee0d83049aeaf01c3c678020, type: 2}
+  restoreDefaultMatTime: 0.1
 --- !u!95 &6917913585840731991
 Animator:
   serializedVersion: 5
@@ -186,7 +229,7 @@ Animator:
   m_GameObject: {fileID: 1134995568646391848}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eadcee24855881f44986b21c6be47c51, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

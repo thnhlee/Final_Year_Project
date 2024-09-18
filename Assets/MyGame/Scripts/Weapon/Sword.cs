@@ -6,7 +6,8 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 {
     [SerializeField] private GameObject slashAnimPrefab;
-    [SerializeField] private Transform slashAnimSpawnPoint;
+    [SerializeField] private Transform slashPoint;
+    [SerializeField] private Transform weaponCollider;
 
     private PlayerControls playerControls;
     private Animator myAnimator;
@@ -41,32 +42,38 @@ public class Sword : MonoBehaviour
     private void Attack()
     {
         myAnimator.SetTrigger("isAttack");
+        weaponCollider.gameObject.SetActive(true);
 
-        //slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
-        //slashAnim.transform.parent = this.transform.parent;
+        slashAnim = Instantiate(slashAnimPrefab, slashPoint.position, Quaternion.identity);
+        slashAnim.transform.parent = this.transform.parent;
     }
 
-    //public void SwingUpFlipAnim()
-    //{
-    //    slashAnim.gameObject.transform.rotation = Quaternion.Euler(-180, 0, 0);
+    public void AfterAttacked()
+    {
+        weaponCollider.gameObject.SetActive(false);
+    }
 
-    //    if (playerController.FacingLeft)
-    //    {
-    //        slashAnim.GetComponent<SpriteRenderer>().flipX = true;
-    //    }
-    //}
+    public void SwingUpFlipEvent()
+    {
+        slashAnim.gameObject.transform.rotation = Quaternion.Euler(-180, 0, 0);
 
-    //public void SwingDownFlipAnim()
-    //{
-    //    slashAnim.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (playerController.FacingLeft)
+        {
+            slashAnim.GetComponent<SpriteRenderer>().flipX = true;
+        }
+    }
 
-    //    if (playerController.FacingLeft)
-    //    {
-    //        slashAnim.GetComponent<SpriteRenderer>().flipX = true;
-    //    }
-    //}
+    public void SwingDownFlipEvent()
+    {
+        slashAnim.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 
-    //Move the character's view follow the mouse
+        if (playerController.FacingLeft)
+        {
+            slashAnim.GetComponent<SpriteRenderer>().flipX = true;
+        }
+    }
+
+    //Move the character's view follow the mouse        
     private void MouseFollowWithOffset()
     {
         Vector3 mousePos = Input.mousePosition;
@@ -77,10 +84,15 @@ public class Sword : MonoBehaviour
         if (mousePos.x < playerScreenPoint.x)
         {
             activeWeapon.transform.rotation = Quaternion.Euler(0, -180, angle);
+            weaponCollider.transform.rotation = Quaternion.Euler(0, -180, 0);
         }
         else
         {
             activeWeapon.transform.rotation = Quaternion.Euler(0, 0, angle);
+            weaponCollider.transform.rotation = Quaternion.Euler(0, 0, 0);
+
         }
     }
+
+    
 }
