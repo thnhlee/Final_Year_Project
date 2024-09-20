@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 [AddComponentMenu("ThinhLe/EnemyHealth")]
 
@@ -8,6 +9,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int Health = 3;
+    [SerializeField] private GameObject deathVfx;
+    [SerializeField] private float knockBackThrust = 15f;
 
     private int currentHealth;
     private KnockBack knockBack;
@@ -26,14 +29,22 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        knockBack.GetKnockedBack(PlayerController.Instance.transform, 15f);
+        knockBack.GetKnockedBack(PlayerController.Instance.transform, knockBackThrust);
         StartCoroutine(hitFlash.FlashRoutine());
+        StartCoroutine(CheckDeadRoutine());
+    }
+
+    private IEnumerator CheckDeadRoutine()
+    {
+        yield return new WaitForSeconds(hitFlash.GetRestoreMatTime());
+        Dead();
     }
 
     public void Dead()
     {
         if (currentHealth <= 0)
         {
+            Instantiate(deathVfx, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

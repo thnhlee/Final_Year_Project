@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-
+    [SerializeField] private float roamChangeDir = 2f;
     private enum State
     {
         Roaming
@@ -39,9 +39,11 @@ public class EnemyAI : MonoBehaviour
             enemyPathfinding.MoveTo(roamPosition);
 
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(roamChangeDir);
         }
     }
+
+    //Flip the enemy to the right direction
     private void Flip()
     {
         Vector2 currentPosition = transform.position;
