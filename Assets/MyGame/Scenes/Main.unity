@@ -2159,6 +2159,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4266810815480920539, guid: b5df5d07f21780649be029158af8347d, type: 3}
   m_PrefabInstance: {fileID: 655819474}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &724475771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 724475772}
+  - component: {fileID: 724475773}
+  m_Layer: 0
+  m_Name: CameraController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &724475772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724475771}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1939641761}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &724475773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724475771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a584cec09e3187f4e8296f05270e772c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &861033674
 GameObject:
   m_ObjectHideFlags: 0
@@ -12339,6 +12383,52 @@ MonoBehaviour:
   slashPoint: {fileID: 2101043500}
   weaponCollider: {fileID: 1458237684}
   swordAttackCD: 0.5
+--- !u!1 &1939641759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1939641761}
+  - component: {fileID: 1939641760}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1939641760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939641759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9615b4ca63251e4c87062dbf3868e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1939641761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939641759}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.9003687, y: -1.292401, z: -0.009471308}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1955429217}
+  - {fileID: 724475772}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1955429215
 GameObject:
   m_ObjectHideFlags: 0
@@ -12376,12 +12466,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1955429215}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.9003687, y: 1.292401, z: 0.009471308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1939641761}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2035114375
 GameObject:
@@ -12734,7 +12824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ee09f837159534aaae87991b34197d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionName: EEntry
+  transitionName: Main_Entry
 --- !u!1 &4574594881007335610
 GameObject:
   m_ObjectHideFlags: 0
@@ -12783,7 +12873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Map_1
-  sceneTransitionName: WEntry
+  sceneTransitionName: Map_1_Entry
 --- !u!4 &8860193109193982423
 Transform:
   m_ObjectHideFlags: 0
@@ -12810,4 +12900,4 @@ SceneRoots:
   - {fileID: 866809275}
   - {fileID: 865636846}
   - {fileID: 8860193109193982423}
-  - {fileID: 1955429217}
+  - {fileID: 1939641761}
