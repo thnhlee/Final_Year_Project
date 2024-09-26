@@ -99,7 +99,7 @@ public class PlayerController : Singleton<PlayerController>
             myTrailRenderer.emitting = true;
             StartCoroutine(EndDash());
         }
-}
+    }
 
     private IEnumerator EndDash()
     {
