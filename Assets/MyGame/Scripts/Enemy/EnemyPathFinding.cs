@@ -21,10 +21,17 @@ public class EnemyPathFinding : MonoBehaviour
     {
         if (knockBack.gettingKnockedBack) { return; }
         rb.MovePosition(rb.position + moveDirection * (moveSpeed * Time.fixedDeltaTime));
+        GetComponent<EnemyAI>().UpdateLastPosition(rb.position);
     }
 
     public void MoveTo(Vector2 targetPosition)
     {
-        moveDirection = targetPosition;
+        //Enemy roaming random
+        //moveDirection = targetPosition;
+
+        //Enemy target the player 
+        Vector2 currentPosition = rb.position;
+        moveDirection = (targetPosition - currentPosition).normalized;
     }
+
 }

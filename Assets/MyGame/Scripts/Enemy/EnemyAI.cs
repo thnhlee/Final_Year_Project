@@ -6,10 +6,13 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] private float roamChangeDir = 2f;
+    [SerializeField] private float roamChangeDir = 1f;
+    //[SerializeField] private Transform player;
+    private GameObject player;
     private enum State
     {
-        Roaming
+        //Roaming,
+        TargetPlayer
     }
     private State state;
     private EnemyPathFinding enemyPathfinding;
@@ -20,27 +23,56 @@ public class EnemyAI : MonoBehaviour
     {
         enemyPathfinding = GetComponent<EnemyPathFinding>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
-        state = State.Roaming;
+        state = State.TargetPlayer;
     }
 
     private void Start()
     {
-        StartCoroutine(RoamingRoutine());
+        player = GameObject.FindWithTag("Player");
+        //StartCoroutine(RoamingRoutine());
+        StartCoroutine(TargetPlayerRoutine());
+
     }
     private void Update()
     {
         Flip();
     }
-    private IEnumerator RoamingRoutine()
-    {
-        while (state == State.Roaming)
-        {
-            Vector2 roamPosition = GetRoamingPosition();
-            enemyPathfinding.MoveTo(roamPosition);
 
+    ////Enemy roaming randomly
+    //private IEnumerator RoamingRoutine()
+    //{
+    //    while (state == State.Roaming)
+    //    {
+    //        Vector2 roamPosition = GetRoamingPosition();
+    //        enemyPathfinding.MoveTo(roamPosition);
+
+
+    //        yield return new WaitForSeconds(roamChangeDir);
+    //    }
+    //}
+    //private Vector2 GetRoamingPosition()
+    //{
+    //    return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+    //}
+
+    //Enemy target player
+    private IEnumerator TargetPlayerRoutine()
+    {
+        while (state == State.TargetPlayer)
+        {
+            if (player != null)
+            {
+                Vector2 targetPosition = player.transform.position;
+                enemyPathfinding.MoveTo(targetPosition);
+                
+            }
 
             yield return new WaitForSeconds(roamChangeDir);
         }
+    }
+    public void UpdateLastPosition(Vector2 newPosition)
+    {
+        lastPosition = newPosition;
     }
 
     //Flip the enemy to the right direction
@@ -58,8 +90,5 @@ public class EnemyAI : MonoBehaviour
         lastPosition = currentPosition;
     }
 
-    private Vector2 GetRoamingPosition()
-    {
-        return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-    }
+
 }

@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a754bbebbd52ccc488e411083dcf7b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roamChangeDir: 0.5
 --- !u!114 &7206801787047212271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 3
   deathVfx: {fileID: 2482867346892625661, guid: 832eda4cfe4f5da4b9996c2fad7f1ecb, type: 3}
+  knockBackThrust: 15
 --- !u!114 &-5871683440634161052
 MonoBehaviour:
   m_ObjectHideFlags: 0
