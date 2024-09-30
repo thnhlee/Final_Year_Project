@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+[AddComponentMenu("ThinhLe/MagicLaser")]
 
 public class MagicLaser : MonoBehaviour
 {

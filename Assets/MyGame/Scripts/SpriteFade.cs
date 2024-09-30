@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[AddComponentMenu("ThinhLe/SpriteFade")]
 
 public class SpriteFade : MonoBehaviour
 {
