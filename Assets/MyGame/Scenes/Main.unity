@@ -12482,6 +12482,7 @@ GameObject:
   - component: {fileID: 1348712423}
   - component: {fileID: 1348712425}
   - component: {fileID: 1348712424}
+  - component: {fileID: 1348712426}
   m_Layer: 5
   m_Name: Inventory (4)
   m_TagString: Untagged
@@ -12548,6 +12549,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348712422}
   m_CullTransparentMesh: 1
+--- !u!114 &1348712426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348712422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a51ec867aacf8749a737f0910b6b3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponInfo: {fileID: 0}
 --- !u!1 &1360942395
 GameObject:
   m_ObjectHideFlags: 0
@@ -12908,7 +12922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbfc5c8d4695ed468b051901c78bfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordDamage: 1
 --- !u!60 &1458237686
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12975,6 +12988,7 @@ GameObject:
   - component: {fileID: 1479143190}
   - component: {fileID: 1479143192}
   - component: {fileID: 1479143191}
+  - component: {fileID: 1479143193}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -13041,6 +13055,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479143189}
   m_CullTransparentMesh: 1
+--- !u!114 &1479143193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479143189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a51ec867aacf8749a737f0910b6b3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponInfo: {fileID: 11400000, guid: bd2d9d9f8c37bdc4b8c0c94a12ebb0ab, type: 2}
 --- !u!1001 &1515700133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13114,6 +13141,7 @@ GameObject:
   - component: {fileID: 1679955835}
   - component: {fileID: 1679955837}
   - component: {fileID: 1679955836}
+  - component: {fileID: 1679955838}
   m_Layer: 5
   m_Name: Inventory (3)
   m_TagString: Untagged
@@ -13180,6 +13208,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679955834}
   m_CullTransparentMesh: 1
+--- !u!114 &1679955838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679955834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a51ec867aacf8749a737f0910b6b3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponInfo: {fileID: 0}
 --- !u!1 &1712786625
 GameObject:
   m_ObjectHideFlags: 0
@@ -13191,6 +13232,7 @@ GameObject:
   - component: {fileID: 1712786626}
   - component: {fileID: 1712786628}
   - component: {fileID: 1712786627}
+  - component: {fileID: 1712786629}
   m_Layer: 5
   m_Name: Inventory (1)
   m_TagString: Untagged
@@ -13257,6 +13299,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712786625}
   m_CullTransparentMesh: 1
+--- !u!114 &1712786629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712786625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a51ec867aacf8749a737f0910b6b3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponInfo: {fileID: 11400000, guid: 9272039ccdfd12640984e7cf010533c2, type: 2}
 --- !u!1001 &1864130857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13265,6 +13320,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 133132783}
     m_Modifications:
+    - target: {fileID: -2199802112967213638, guid: e3dd9b9ba2eddb24293e8c30fd17fca3, type: 3}
+      propertyPath: destroyVFX
+      value: 
+      objectReference: {fileID: 7785553654888927336, guid: 7b014907deb5f7a4f81cdc81e768297f, type: 3}
     - target: {fileID: 812499240416474092, guid: e3dd9b9ba2eddb24293e8c30fd17fca3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.7264028
@@ -13759,6 +13818,7 @@ MonoBehaviour:
   moveSpeed: 4
   dashSpeed: 4
   myTrailRenderer: {fileID: 1427604144}
+  weaponCollider: {fileID: 1458237684}
 --- !u!95 &2035114380
 Animator:
   serializedVersion: 5
@@ -13838,6 +13898,7 @@ GameObject:
   - component: {fileID: 2055806619}
   - component: {fileID: 2055806621}
   - component: {fileID: 2055806620}
+  - component: {fileID: 2055806622}
   m_Layer: 5
   m_Name: Inventory (2)
   m_TagString: Untagged
@@ -13904,6 +13965,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055806618}
   m_CullTransparentMesh: 1
+--- !u!114 &2055806622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055806618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a51ec867aacf8749a737f0910b6b3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponInfo: {fileID: 0}
 --- !u!1 &2101043499
 GameObject:
   m_ObjectHideFlags: 0
@@ -13945,6 +14019,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2143597427}
   - component: {fileID: 2143597428}
+  - component: {fileID: 2143597429}
   m_Layer: 0
   m_Name: Active Weapon
   m_TagString: Untagged
@@ -13980,7 +14055,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3532159b93333440913aab8b03552ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentActiveWeapon: {fileID: 0}
+--- !u!114 &2143597429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143597426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1859001108f2e6b479a11d71a2e9a030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &2144987511049531723
 BoxCollider2D:
   m_ObjectHideFlags: 0

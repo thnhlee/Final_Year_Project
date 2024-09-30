@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour
 {
-    [SerializeField] private GameObject detroyVFX;
-    private void OnTriggerEnter2D(Collider2D other)
+    [SerializeField] private GameObject destroyVFX;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(other.gameObject.GetComponent<AttackDamage>())
+        if(collision.gameObject.GetComponent<AttackDamage>() || collision.gameObject.GetComponent<Projectile>())
         {
-            Instantiate(detroyVFX, transform.position, Quaternion.identity);
+            Instantiate(destroyVFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
