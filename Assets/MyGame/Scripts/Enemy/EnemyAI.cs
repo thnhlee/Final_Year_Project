@@ -9,15 +9,16 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float roamChangeDir = 1f;
     //[SerializeField] private Transform player;
     private GameObject player;
+    private State state;
+    private EnemyPathFinding enemyPathfinding;
+    private SpriteRenderer mySpriteRenderer;
+    private Vector2 lastPosition;
+
     private enum State
     {
         //Roaming,
         TargetPlayer
     }
-    private State state;
-    private EnemyPathFinding enemyPathfinding;
-    private SpriteRenderer mySpriteRenderer;
-    private Vector2 lastPosition;
 
     private void Awake()
     {
@@ -31,29 +32,27 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         //StartCoroutine(RoamingRoutine());
         StartCoroutine(TargetPlayerRoutine());
-
     }
+
     private void Update()
     {
         Flip();
     }
 
-    ////Enemy roaming randomly
-    //private IEnumerator RoamingRoutine()
-    //{
-    //    while (state == State.Roaming)
-    //    {
-    //        Vector2 roamPosition = GetRoamingPosition();
-    //        enemyPathfinding.MoveTo(roamPosition);
-
-
-    //        yield return new WaitForSeconds(roamChangeDir);
-    //    }
-    //}
-    //private Vector2 GetRoamingPosition()
-    //{
-    //    return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-    //}
+    //Flip the enemy to the correct direction
+    private void Flip()
+    {
+        Vector2 currentPosition = transform.position;
+        if (currentPosition.x < lastPosition.x)
+        {
+            mySpriteRenderer.flipX = true;
+        }
+        else if (currentPosition.x > lastPosition.x)
+        {
+            mySpriteRenderer.flipX = false;
+        }
+        lastPosition = currentPosition;
+    }
 
     //Enemy target player
     private IEnumerator TargetPlayerRoutine()
@@ -75,20 +74,22 @@ public class EnemyAI : MonoBehaviour
         lastPosition = newPosition;
     }
 
-    //Flip the enemy to the right direction
-    private void Flip()
-    {
-        Vector2 currentPosition = transform.position;
-        if (currentPosition.x < lastPosition.x)
-        {
-            mySpriteRenderer.flipX = true;
-        }
-        else if (currentPosition.x > lastPosition.x)
-        {
-            mySpriteRenderer.flipX = false;
-        }
-        lastPosition = currentPosition;
-    }
+    ////Enemy roaming randomly
+    //private IEnumerator RoamingRoutine()
+    //{
+    //    while (state == State.Roaming)
+    //    {
+    //        Vector2 roamPosition = GetRoamingPosition();
+    //        enemyPathfinding.MoveTo(roamPosition);
+
+
+    //        yield return new WaitForSeconds(roamChangeDir);
+    //    }
+    //}
+    //private Vector2 GetRoamingPosition()
+    //{
+    //    return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+    //}
 
 
 }

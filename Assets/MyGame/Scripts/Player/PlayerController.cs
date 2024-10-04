@@ -19,7 +19,6 @@ public class PlayerController : Singleton<PlayerController>
     private PlayerControls playerControls;
     private Vector2 movement;
     private Rigidbody2D rb;
-
     private Animator myAnimator;
     private SpriteRenderer mySpriteRenderer;
     private KnockBack knockBack;
@@ -85,6 +84,8 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
+
+    //Player's movement
     private void PlayerInput()
     {
         movement = playerControls.Movement.Move.ReadValue<Vector2>();
@@ -93,7 +94,7 @@ public class PlayerController : Singleton<PlayerController>
         myAnimator.SetFloat("moveY", movement.y);
 
     }
-
+ 
     private void Move()
     {
         if (knockBack.gettingKnockedBack) 
@@ -103,6 +104,8 @@ public class PlayerController : Singleton<PlayerController>
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
+
+    //DASH
     private void Dash()
     {
         if (!isDashing)
