@@ -34,25 +34,7 @@ public class EnemyAI : MonoBehaviour
         StartCoroutine(TargetPlayerRoutine());
     }
 
-    private void Update()
-    {
-        Flip();
-    }
 
-    //Flip the enemy to the correct direction
-    private void Flip()
-    {
-        Vector2 currentPosition = transform.position;
-        if (currentPosition.x < lastPosition.x)
-        {
-            mySpriteRenderer.flipX = true;
-        }
-        else if (currentPosition.x > lastPosition.x)
-        {
-            mySpriteRenderer.flipX = false;
-        }
-        lastPosition = currentPosition;
-    }
 
     //Enemy target player
     private IEnumerator TargetPlayerRoutine()

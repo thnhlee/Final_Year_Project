@@ -2,42 +2,75 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-using UnityEngine.Experimental.AI;
+
 [AddComponentMenu("ThinhLe/EnemyAI2")]
 
 public class EnemyAI2 : MonoBehaviour
 {
+    [SerializeField] private MonoBehaviour enemyType;
+    [SerializeField] private float attackRange = 5f;
+    [SerializeField] private float attackCD = 2f;
+    [SerializeField] private bool stopMovingWhileAttacking = false;
+
     public Seeker seeker;
+    public Path path;
+    public Coroutine moveCoroutine;
+    private KnockBack knockBack;
+    private SpriteRenderer mySpriteRenderer;
+
+
+    private enum State
+    {
+        Roaming,
+        Attacking
+    }
+    private State state;
+
+
     public bool roaming = true;
     public float moveSpeed = 3f;
-
-    public float nextWayPointDistance;
+    public float nextWayPointDistance = 0.3f;
     public bool updateContinuePath;
     bool reachDestination = false;
 
-    //-----Enemy fire
-    public bool isShootable = false;
-
-
-    private SpriteRenderer mySpriteRenderer;
+    private bool canAttack = true;
     private Vector2 lastPosition;
 
 
-    Path path;
-    Coroutine moveCoroutine;
 
     private void Awake()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        knockBack = GetComponent<KnockBack>();
+        state = State.Roaming;
     }
+
     private void Start()
     {
         InvokeRepeating("CalculatePath", 0f, 0.5f);
         reachDestination = true;
-        lastPosition = transform.position;
     }
 
- 
+    private void FixedUpdate()
+    {
+        MovementStateControl();
+        if (knockBack.gettingKnockedBack) { return; }
+    }
+
+    private void MovementStateControl()
+    {
+        switch (state)
+        {
+            default:
+            case State.Roaming:
+                FindTarget();
+                break;
+            case State.Attacking:
+                Attacking();
+                break;
+        }
+    }
+
 
     //-----Flip the enemy to the correct direction
     private void Flip()
@@ -51,10 +84,9 @@ public class EnemyAI2 : MonoBehaviour
         {
             mySpriteRenderer.flipX = false;
         }
+
         lastPosition = currentPosition;
     }
-
-
 
     //-----Caculating path to the Player
     private void CalculatePath()
@@ -81,7 +113,7 @@ public class EnemyAI2 : MonoBehaviour
 
         if (roaming == true)
         {
-            //Enemy move around Player
+            //Draw a space for enemy to move around Player
             return (Vector2)playerPos + (Random.Range(10f, 10f) * new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized);
         }
         else
@@ -93,11 +125,17 @@ public class EnemyAI2 : MonoBehaviour
     //-----Move to Player
     private void MoveToTarget()
     {
-        if (moveCoroutine != null) 
+        if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange)
+        {
+            state = State.Attacking;
+        }
+
+        if (moveCoroutine != null)
         {
             StopCoroutine(moveCoroutine);
         }
         moveCoroutine = StartCoroutine(MoveToTargetCoroutine());
+
     }
 
     IEnumerator MoveToTargetCoroutine()
@@ -114,7 +152,7 @@ public class EnemyAI2 : MonoBehaviour
             Flip();
 
             float distance = Vector2.Distance(transform.position, path.vectorPath[currentWayPoint]);
-            if(distance < nextWayPointDistance) 
+            if (distance < nextWayPointDistance) 
             {
                 currentWayPoint++;
             }
@@ -122,6 +160,47 @@ public class EnemyAI2 : MonoBehaviour
             yield return null;
         }
 
+        reachDestination = true;
+    }
+
+    //Enemy attack
+    private void Attacking()
+    {
+        if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > attackRange)
+        {
+            state = State.Roaming;
+        }
+
+        if (attackRange != 0 && canAttack)
+        {
+            canAttack = false;
+            (enemyType as IEnemy).Attack();
+
+            if (stopMovingWhileAttacking)
+            {
+                StopMoving();
+            }
+            else
+            {
+                MoveToTarget();
+            }
+
+            StartCoroutine(AttackCDRoutine());
+        }
+    }
+
+    private IEnumerator AttackCDRoutine()
+    {
+        yield return new WaitForSeconds(attackCD);
+        canAttack = true;
+    }
+
+    private void StopMoving()
+    {
+        if (moveCoroutine != null)
+        {
+            StopCoroutine(moveCoroutine);
+        }
         reachDestination = true;
     }
 

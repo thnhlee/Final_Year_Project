@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - NoTurn
+  - Enemy
   layers:
   - Default
   - TransparentFX
