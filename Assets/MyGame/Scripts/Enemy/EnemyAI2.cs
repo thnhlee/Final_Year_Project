@@ -57,11 +57,6 @@ public class EnemyAI2 : MonoBehaviour
         if (knockBack.gettingKnockedBack) { return; }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
-        player.TakeDamage(5, transform);
-    }
 
     private void MovementStateControl()
     {

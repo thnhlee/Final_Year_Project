@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        EnemyAI enemy = collision.gameObject.GetComponent<EnemyAI>();
+        EnemyAI2 enemy = collision.gameObject.GetComponent<EnemyAI2>();
 
         if (enemy)
         {
