@@ -11732,6 +11732,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 866809275}
     m_Modifications:
+    - target: {fileID: 5202406086576495413, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
+      propertyPath: reload
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202406086576495413, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
+      propertyPath: burstCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202406086576495413, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
+      propertyPath: timeBtwBurst
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202406086576495413, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
+      propertyPath: bulletMoveSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7303018453809005171, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.8041425
@@ -11776,11 +11792,39 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost
       objectReference: {fileID: 0}
+    - target: {fileID: 7514269079736425417, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027167346595341702, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
+      propertyPath: attackRange
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7514269079736425417, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1649420242168718780}
   m_SourcePrefab: {fileID: 100100000, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
+--- !u!1 &1649420242168718779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7514269079736425417, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
+  m_PrefabInstance: {fileID: 1649420242168718778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!210 &1649420242168718780
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649420242168718779}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!61 &2144987511049531723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12105,13 +12149,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 6049187377275264399, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
+      propertyPath: attackCD
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049187377275264399, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
+      propertyPath: enemyType
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049187377275264399, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
+      propertyPath: attackRange
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9159721060627069771, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.22
+      value: -0.37
       objectReference: {fileID: 0}
     - target: {fileID: 9159721060627069771, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.84
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 9159721060627069771, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
       propertyPath: m_LocalPosition.z

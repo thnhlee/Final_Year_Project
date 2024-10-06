@@ -36,14 +36,14 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damageAmount, Transform hittransform)
+    public void TakeDamage(int damageAmount, Transform hitTransform)
     {
         if (!canTakeDamage)
         {
             return;
         }
 
-        knockBack.GetKnockedBack(hittransform.gameObject.transform, knockBackThrust);
+        knockBack.GetKnockedBack(hitTransform.gameObject.transform, knockBackThrust);
         StartCoroutine(hitFlash.FlashRoutine());
 
         canTakeDamage = false;

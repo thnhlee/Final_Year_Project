@@ -57,6 +57,12 @@ public class EnemyAI2 : MonoBehaviour
         if (knockBack.gettingKnockedBack) { return; }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+        player.TakeDamage(5, transform);
+    }
+
     private void MovementStateControl()
     {
         switch (state)
@@ -174,7 +180,10 @@ public class EnemyAI2 : MonoBehaviour
         if (attackRange != 0 && canAttack)
         {
             canAttack = false;
-            (enemyType as IEnemy).Attack();
+            if(enemyType != null && enemyType is IEnemy) 
+            { 
+                (enemyType as IEnemy).Attack(); 
+            }
 
             if (stopMovingWhileAttacking)
             {
@@ -187,6 +196,7 @@ public class EnemyAI2 : MonoBehaviour
 
             StartCoroutine(AttackCDRoutine());
         }
+       
     }
 
     private IEnumerator AttackCDRoutine()

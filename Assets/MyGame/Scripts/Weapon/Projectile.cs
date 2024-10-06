@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 22f;
+    [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject particleOnHitVFX;
     [SerializeField] private bool isEnemyProjectile = false;
     [SerializeField] private float projectileRange = 10f;
@@ -26,7 +26,14 @@ public class Projectile : MonoBehaviour
     public void UpdateProjectileRange(float projectileRange)
     {
         this.projectileRange = projectileRange;
+    }    
+    
+    public void UpdateMoveSpeed(float moveSpeed)
+    {
+        this.moveSpeed = moveSpeed;
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
