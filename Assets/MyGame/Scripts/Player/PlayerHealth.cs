@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [AddComponentMenu("ThinhLe/PlayerHealth")]
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : Singleton<PlayerHealth>
 {
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private float knockBackThrust = 5f;
@@ -14,8 +14,10 @@ public class PlayerHealth : MonoBehaviour
     private KnockBack knockBack;
     private HitFlash hitFlash;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         hitFlash = GetComponent<HitFlash>();
         knockBack = GetComponent<KnockBack>();
     }
@@ -32,8 +34,12 @@ public class PlayerHealth : MonoBehaviour
         if (enemy)
         {
             TakeDamage(1, collision.transform);
-
         }
+    }
+
+    public void Healing()
+    {
+        currentHealth += 1;
     }
 
     public void TakeDamage(int damageAmount, Transform hitTransform)
@@ -42,6 +48,8 @@ public class PlayerHealth : MonoBehaviour
         {
             return;
         }
+
+        ScreenShake.Instance.ShakeScreen();
 
         knockBack.GetKnockedBack(hitTransform.gameObject.transform, knockBackThrust);
         StartCoroutine(hitFlash.FlashRoutine());

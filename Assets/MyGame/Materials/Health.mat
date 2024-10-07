@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Magic
+  m_Name: Health
   m_Shader: {fileID: -6465566751694194690, guid: 8be0fcbbe82b4e947b9964b7c2bc339c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -55,5 +55,5 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 36.27383, g: 0, b: 10.253784, a: 0}
+    - _Color: {r: 3.101735, g: 0.017556738, b: 0.017556738, a: 0}
   m_BuildTextureStacks: []
