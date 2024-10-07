@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 [AddComponentMenu("ThinhLe/PlayerHealth")]
 
 public class PlayerHealth : Singleton<PlayerHealth>
@@ -9,6 +10,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private float knockBackThrust = 5f;
     [SerializeField] private float damageRecoveryTime = 1f;
 
+    private Slider healthSlider;
     private int currentHealth;
     private bool canTakeDamage = true;
     private KnockBack knockBack;
@@ -25,6 +27,8 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private void Start()
     {
         currentHealth = maxHealth;
+
+        UpdateHealthSlider();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -39,7 +43,11 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     public void Healing()
     {
-        currentHealth += 1;
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += 1;
+            UpdateHealthSlider();
+        }
     }
 
     public void TakeDamage(int damageAmount, Transform hitTransform)
@@ -57,11 +65,33 @@ public class PlayerHealth : Singleton<PlayerHealth>
         canTakeDamage = false;
         currentHealth -= damageAmount;
         StartCoroutine(DamageRecoveryTimeRoutine());
+        UpdateHealthSlider();
+        PlayerDeath();
     }
 
     private IEnumerator DamageRecoveryTimeRoutine()
     {
         yield return new WaitForSeconds(damageRecoveryTime);
         canTakeDamage = true;
+    }
+
+    private void PlayerDeath()
+    {
+        if(currentHealth <= 0)
+        {
+            currentHealth = 0;
+
+        }
+    }
+
+    private void UpdateHealthSlider()
+    {
+        if(healthSlider == null)
+        {
+            healthSlider = GameObject.Find("Heart Slider").GetComponent<Slider>();
+        }
+
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = currentHealth;
     }
 }

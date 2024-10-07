@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2106955936285806121}
   - component: {fileID: 781313579662056795}
   - component: {fileID: 6049187377275264399}
+  - component: {fileID: 3607946823619979926}
   m_Layer: 0
   m_Name: Blue Slime
   m_TagString: Enemy
@@ -257,12 +258,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42954f7cbbe89b04e9d6d9788641f67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: {fileID: 6049187377275264399}
-  attackRange: 2
-  attackCD: 1
+  enemyType: {fileID: 0}
+  attackRange: 3
+  attackCD: 0.5
   stopMovingWhileAttacking: 0
   seeker: {fileID: 781313579662056795}
   roaming: 0
   moveSpeed: 2
   nextWayPointDistance: 0.3
   updateContinuePath: 1
+--- !u!114 &3607946823619979926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512605490175318286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7994b8b729e554ab72a4e08f50f304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin: {fileID: 3954064876671037913, guid: 971bb10749a560548b0cde07ca5b12dd, type: 3}
+  health: {fileID: 3954064876671037913, guid: afc1d330a53e16643adc3c0ce304db76, type: 3}

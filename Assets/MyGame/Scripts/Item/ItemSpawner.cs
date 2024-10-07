@@ -7,11 +7,18 @@ public class ItemSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject coin, health;
 
+    private bool isEnemy = false;
+
+    private void Start()
+    {
+        isEnemy = gameObject.CompareTag("Enemy");
+    }
+
     public void DropItem()
     {
         int randomNum = Random.Range(1, 10);
 
-        if(randomNum == 1)
+        if(!isEnemy && randomNum == 1  )
         {
             Instantiate(health, transform.position, Quaternion.identity);
         }

@@ -23,10 +23,11 @@ public class PlayerController : Singleton<PlayerController>
     private SpriteRenderer mySpriteRenderer;
     private KnockBack knockBack;
     private float baseMoveSpeed;
-
+    private Collider2D playerCollider;
 
     private bool facingLeft = false;
     private bool isDashing = false;
+    private bool isInvulnerable = false;
 
     protected override void Awake()
     {
@@ -37,6 +38,7 @@ public class PlayerController : Singleton<PlayerController>
         myAnimator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         knockBack = GetComponent<KnockBack>();
+        playerCollider = GetComponent<Collider2D>();
     }
 
     private void Start()
@@ -112,6 +114,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             isDashing = true;
             moveSpeed *= dashSpeed;
+            Invulnerable(true);
             myTrailRenderer.emitting = true;
             StartCoroutine(EndDash());
         }
@@ -119,11 +122,30 @@ public class PlayerController : Singleton<PlayerController>
 
     private IEnumerator EndDash()
     {
-        float dashTime = 0.2f;
+        float dashTime = 1f;
         float dashCD = 0.25f;
         yield return new WaitForSeconds(dashTime);
         moveSpeed = baseMoveSpeed;
+        Invulnerable(false);
         yield return new WaitForSeconds(dashCD);
         isDashing = false;
     }
+
+    //Invulnerable while dashing
+    private void Invulnerable(bool ignore)
+    {
+        Projectile[] bullets = FindObjectsOfType<Projectile>();
+
+        foreach (Projectile bullet in bullets)
+        {
+            Collider2D bulletCollider = bullet.GetComponent<Collider2D>();
+            if (bulletCollider != null)
+            {
+                Physics2D.IgnoreCollision(bulletCollider, playerCollider, ignore);
+            }
+        }
+    }
+
+
+
 }

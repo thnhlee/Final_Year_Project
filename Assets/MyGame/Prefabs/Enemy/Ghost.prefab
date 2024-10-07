@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7303018453809005171}
   - component: {fileID: 2294522642899743311}
+  - component: {fileID: 1224605015078604230}
   - component: {fileID: 8796943548292103079}
   - component: {fileID: 2930238188331180043}
   - component: {fileID: 2353397687086904651}
@@ -102,6 +103,7 @@ GameObject:
   - component: {fileID: 5202406086576495413}
   - component: {fileID: 9220135122711332896}
   - component: {fileID: 8027167346595341702}
+  - component: {fileID: 8618168548426237767}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Enemy
@@ -117,7 +119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7514269079736425417}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.8041425, y: 0.7058703, z: 0.07662892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -177,6 +179,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &1224605015078604230
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514269079736425417}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!50 &8796943548292103079
 Rigidbody2D:
   serializedVersion: 4
@@ -294,6 +308,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3741276149259401493, guid: b9c53097f96ce12439e48d197310f8a0, type: 3}
+  bulletMoveSpeed: 6
+  burstCount: 3
+  timeBtwBurst: 0.3
+  reload: 2
 --- !u!114 &9220135122711332896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: {fileID: 5202406086576495413}
-  attackRange: 5
+  attackRange: 8
   attackCD: 2
   stopMovingWhileAttacking: 1
   seeker: {fileID: 9220135122711332896}
@@ -343,3 +361,17 @@ MonoBehaviour:
   moveSpeed: 2
   nextWayPointDistance: 0.3
   updateContinuePath: 1
+--- !u!114 &8618168548426237767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514269079736425417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7994b8b729e554ab72a4e08f50f304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin: {fileID: 3954064876671037913, guid: 971bb10749a560548b0cde07ca5b12dd, type: 3}
+  health: {fileID: 3954064876671037913, guid: afc1d330a53e16643adc3c0ce304db76, type: 3}
