@@ -11,7 +11,7 @@ public class Staff : MonoBehaviour, IWeapon
     [SerializeField] private Transform magicLaserSpawnPoint;
 
     private Animator myAnimator;
-    readonly int AttackHash = Animator.StringToHash("isAttack");
+    readonly int AttacAnim = Animator.StringToHash("isAttack");
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class Staff : MonoBehaviour, IWeapon
     }
     public void Attack()
     {
-        myAnimator.SetTrigger(AttackHash);
+        myAnimator.SetTrigger(AttacAnim);
     }
     private void MouseFollowWithOffset()
     {

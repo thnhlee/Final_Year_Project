@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 [AddComponentMenu("ThinhLe/PlayerHealth")]
 
 public class PlayerHealth : Singleton<PlayerHealth>
@@ -10,6 +11,8 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private float knockBackThrust = 5f;
     [SerializeField] private float damageRecoveryTime = 1f;
 
+    public bool isDead {  get; private set; }
+
     private Slider healthSlider;
     private int currentHealth;
     private bool canTakeDamage = true;
@@ -17,6 +20,8 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private HitFlash hitFlash;
 
     const string HeartSlider = "Heart Slider";
+    const string BaseRespawn = "Base";
+    readonly int DeadAnim = Animator.StringToHash("isDead");
 
 
     protected override void Awake()
@@ -80,9 +85,13 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     private void PlayerDeath()
     {
-        if(currentHealth <= 0)
+        if(currentHealth <= 0 && !isDead)
         {
+            isDead = true;
+            Destroy(ActiveWeapon.Instance.gameObject);
+
             currentHealth = 0;
+            GetComponent<Animator>().SetTrigger(DeadAnim);
 
         }
     }
