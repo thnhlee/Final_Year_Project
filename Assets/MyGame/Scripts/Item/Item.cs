@@ -92,10 +92,10 @@ public class Item : MonoBehaviour
         switch (itemType)
         {
             case Items.Coin:
-                Debug.Log("lum coin");
+                CoinManager.Instance.UpdateCurrentCoin();
                 break;
             case Items.Health:
-                Debug.Log("lum mau");
+                PlayerHealth.Instance.Healing();
                 break;
         }
     }

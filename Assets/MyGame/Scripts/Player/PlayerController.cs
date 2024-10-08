@@ -8,8 +8,8 @@ using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
 {
-        
-    public bool FacingLeft { get { return facingLeft; } }   
+
+    public bool FacingLeft { get { return facingLeft; } }
 
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float dashSpeed = 4f;
@@ -27,7 +27,6 @@ public class PlayerController : Singleton<PlayerController>
 
     private bool facingLeft = false;
     private bool isDashing = false;
-    private bool isInvulnerable = false;
 
     protected override void Awake()
     {
@@ -91,17 +90,17 @@ public class PlayerController : Singleton<PlayerController>
     private void PlayerInput()
     {
         movement = playerControls.Movement.Move.ReadValue<Vector2>();
-        
+
         myAnimator.SetFloat("moveX", movement.x);
         myAnimator.SetFloat("moveY", movement.y);
 
     }
- 
+
     private void Move()
     {
-        if (knockBack.gettingKnockedBack) 
+        if (knockBack.gettingKnockedBack)
         {
-            return; 
+            return;
         }
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
@@ -122,8 +121,8 @@ public class PlayerController : Singleton<PlayerController>
 
     private IEnumerator EndDash()
     {
-        float dashTime = 1f;
-        float dashCD = 0.25f;
+        float dashTime = 0.25f;
+        float dashCD = 0.5f;
         yield return new WaitForSeconds(dashTime);
         moveSpeed = baseMoveSpeed;
         Invulnerable(false);
@@ -135,6 +134,7 @@ public class PlayerController : Singleton<PlayerController>
     private void Invulnerable(bool ignore)
     {
         Projectile[] bullets = FindObjectsOfType<Projectile>();
+        EnemyHealth enemy = FindObjectOfType<EnemyHealth>();
 
         foreach (Projectile bullet in bullets)
         {
@@ -142,10 +142,18 @@ public class PlayerController : Singleton<PlayerController>
             if (bulletCollider != null)
             {
                 Physics2D.IgnoreCollision(bulletCollider, playerCollider, ignore);
+
+            }
+        }
+
+        if (enemy != null)
+        {
+            Collider2D enemyCollider = enemy.GetComponent<Collider2D>();
+            if (enemyCollider != null)
+            {
+                Physics2D.IgnoreCollision(enemyCollider, playerCollider, ignore);
+
             }
         }
     }
-
-
-
 }

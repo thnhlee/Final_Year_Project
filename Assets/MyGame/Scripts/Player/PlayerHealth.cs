@@ -16,6 +16,9 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private KnockBack knockBack;
     private HitFlash hitFlash;
 
+    const string HeartSlider = "Heart Slider";
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -88,7 +91,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     {
         if(healthSlider == null)
         {
-            healthSlider = GameObject.Find("Heart Slider").GetComponent<Slider>();
+            healthSlider = GameObject.Find(HeartSlider).GetComponent<Slider>();
         }
 
         healthSlider.maxValue = maxHealth;
