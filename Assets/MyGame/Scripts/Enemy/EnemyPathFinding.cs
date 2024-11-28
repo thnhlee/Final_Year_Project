@@ -48,4 +48,6 @@ public class EnemyPathFinding : MonoBehaviour
         moveDirection = (targetPosition - currentPosition).normalized;
     }
 
+
+
 }

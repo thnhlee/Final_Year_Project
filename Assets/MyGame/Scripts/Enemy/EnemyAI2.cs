@@ -7,6 +7,12 @@ using Pathfinding;
 
 public class EnemyAI2 : MonoBehaviour
 {
+    [Header("Dash Settings")]
+    [SerializeField] private float dashSpeed = 3f;
+    [SerializeField] private float dashDuration = 0.25f;
+    [SerializeField] private float dashCooldown = 3f;
+
+
     [SerializeField] private MonoBehaviour enemyType;
     [SerializeField] private float attackRange = 5f;
     [SerializeField] private float attackCD = 2f;
@@ -18,11 +24,18 @@ public class EnemyAI2 : MonoBehaviour
     private KnockBack knockBack;
     private SpriteRenderer mySpriteRenderer;
 
+    //Dash
+    private bool isDashing = false;
+    private bool canDash = true;
+    private float baseMoveSpeed;
+    private float lastDashTime;
+
 
     private enum State
     {
         Roaming,
-        Attacking
+        Attacking,
+        Dashing
     }
     private State state;
 
@@ -49,6 +62,28 @@ public class EnemyAI2 : MonoBehaviour
     {
         InvokeRepeating("CalculatePath", 0f, 0.5f);
         reachDestination = true;
+
+        baseMoveSpeed = moveSpeed;
+        lastDashTime = -dashCooldown;
+    }
+
+    private void Update()
+    {
+        if (gameObject.CompareTag(""))
+        {
+            // Check if dash is available
+            if (!canDash && Time.time >= lastDashTime + dashCooldown)
+            {
+                canDash = true;
+            }
+
+            // Randomly attempt to dash when in attack range
+            if (state == State.Attacking && canDash && !isDashing && Random.value < 0.01f)
+            {
+                StartCoroutine(DashRoutine());
+            }
+        }
+
     }
 
     private void FixedUpdate()
@@ -60,6 +95,7 @@ public class EnemyAI2 : MonoBehaviour
 
     private void MovementStateControl()
     {
+        if (isDashing) return;
         switch (state)
         {
             default:
@@ -68,6 +104,8 @@ public class EnemyAI2 : MonoBehaviour
                 break;
             case State.Attacking:
                 Attacking();
+                break;
+            case State.Dashing:
                 break;
         }
     }
@@ -209,5 +247,51 @@ public class EnemyAI2 : MonoBehaviour
         reachDestination = true;
     }
 
+
+    private IEnumerator DashRoutine()
+    {
+        isDashing = true;
+        canDash = false;
+        lastDashTime = Time.time;
+        state = State.Dashing;
+        float BaseMoveSpeed = moveSpeed;
+        moveSpeed *= dashSpeed;
+
+
+
+        // Generate random direction
+        float randomAngle = Random.Range(0f, 360f);
+        Vector2 dashDirection = new Vector2(
+            Mathf.Cos(randomAngle * Mathf.Deg2Rad),
+            Mathf.Sin(randomAngle * Mathf.Deg2Rad)
+        ).normalized;
+
+        // Perform dash
+        float dashTimer = 0;
+        while (dashTimer < dashDuration)
+        {
+            if (!knockBack.gettingKnockedBack)
+            {
+                transform.position += (Vector3)(dashDirection * moveSpeed * Time.deltaTime);
+            }
+            dashTimer += Time.deltaTime;
+            yield return null;
+        }
+
+        // End dash
+        moveSpeed = BaseMoveSpeed;
+        isDashing = false;
+
+
+        // Return to appropriate state
+        if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange)
+        {
+            state = State.Attacking;
+        }
+        else
+        {
+            state = State.Roaming;
+        }
+    }
 
 }
