@@ -7,12 +7,19 @@ using Pathfinding;
 
 public class EnemyAI2 : MonoBehaviour
 {
+    [Header("Spawn Settings")]
+    [SerializeField] private bool spawnAble = false;
+    [SerializeField] private GameObject smallEnemyPrefab;
+    [SerializeField] private float spawnInterval = 10f; //time to spawn enemy
+    [SerializeField] private float spawnOffset = 1f;//spawn distance from the horse
+
     [Header("Dash Settings")]
+    [SerializeField] private bool dashAble = false;
     [SerializeField] private float dashSpeed = 3f;
     [SerializeField] private float dashDuration = 0.25f;
     [SerializeField] private float dashCooldown = 3f;
 
-
+    [Header("Enemy Settings")]
     [SerializeField] private MonoBehaviour enemyType;
     [SerializeField] private float attackRange = 5f;
     [SerializeField] private float attackCD = 2f;
@@ -25,6 +32,7 @@ public class EnemyAI2 : MonoBehaviour
     private SpriteRenderer mySpriteRenderer;
 
     //Dash
+
     private bool isDashing = false;
     private bool canDash = true;
     private float baseMoveSpeed;
@@ -39,9 +47,9 @@ public class EnemyAI2 : MonoBehaviour
     }
     private State state;
 
-
-    public bool roaming = true;
+    [Header("Pathfinding Settings")]
     public float moveSpeed = 3f;
+    public bool roaming = true;
     public float nextWayPointDistance = 0.3f;
     public bool updateContinuePath;
     bool reachDestination = false;
@@ -69,16 +77,16 @@ public class EnemyAI2 : MonoBehaviour
 
     private void Update()
     {
-        if (gameObject.CompareTag(""))
+        if (dashAble == true)
         {
-            // Check if dash is available
+            //Check if dash is available
             if (!canDash && Time.time >= lastDashTime + dashCooldown)
             {
                 canDash = true;
             }
 
-            // Randomly attempt to dash when in attack range
-            if (state == State.Attacking && canDash && !isDashing && Random.value < 0.01f)
+            //Randomly attempt to dash when in attack range
+            if (canDash && !isDashing && Random.value < 0.01f)
             {
                 StartCoroutine(DashRoutine());
             }
@@ -259,20 +267,43 @@ public class EnemyAI2 : MonoBehaviour
 
 
 
-        // Generate random direction
-        float randomAngle = Random.Range(0f, 360f);
-        Vector2 dashDirection = new Vector2(
-            Mathf.Cos(randomAngle * Mathf.Deg2Rad),
-            Mathf.Sin(randomAngle * Mathf.Deg2Rad)
-        ).normalized;
+        Vector2 dashDirection;
+        
+        if (gameObject.CompareTag("Bosses"))
+        {
+            //Dash forward player
+            dashDirection = ((Vector2)PlayerController.Instance.transform.position - (Vector2)transform.position).normalized;
+
+        }
+        else
+        {
+            //random dash
+            float randomAngle = Random.Range(0f, 360f);
+            dashDirection = new Vector2(
+                Mathf.Cos(randomAngle * Mathf.Deg2Rad),
+                Mathf.Sin(randomAngle * Mathf.Deg2Rad)
+            ).normalized;
+        }
 
         // Perform dash
         float dashTimer = 0;
+        float lastSpawnTime = Time.time;
         while (dashTimer < dashDuration)
         {
             if (!knockBack.gettingKnockedBack)
             {
                 transform.position += (Vector3)(dashDirection * moveSpeed * Time.deltaTime);
+                // Spawn enemies during dash
+                if (Time.time >= lastSpawnTime + spawnInterval)
+                {
+                    // Calculate spawn position
+                    Vector2 spawnPosition = (Vector2)transform.position + Random.insideUnitCircle * spawnOffset;
+
+                    // Spawn the enemy
+                    Instantiate(smallEnemyPrefab, spawnPosition, Quaternion.identity);
+
+                    lastSpawnTime = Time.time;
+                }
             }
             dashTimer += Time.deltaTime;
             yield return null;

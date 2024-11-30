@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 [AddComponentMenu("ThinhLe/EnemyHealth")]
 
 
@@ -15,6 +16,10 @@ public class EnemyHealth : MonoBehaviour
     private int currentHealth;
     private KnockBack knockBack;
     private HitFlash hitFlash;
+    private Slider healthSlider;
+
+
+    const string HeartSlider = "Boss Heart Slider";
 
     private void Awake()
     {
@@ -24,6 +29,10 @@ public class EnemyHealth : MonoBehaviour
     private void Start()
     {
         currentHealth = Health;
+        if (gameObject.CompareTag("Bosses"))
+        {
+            UpdateHealthSlider();
+        }
     }
 
     public void TakeDamage(int damage)
@@ -32,6 +41,10 @@ public class EnemyHealth : MonoBehaviour
         knockBack.GetKnockedBack(PlayerController.Instance.transform, knockBackThrust);
         StartCoroutine(hitFlash.FlashRoutine());
         StartCoroutine(CheckDeadRoutine());
+        if (gameObject.CompareTag("Bosses"))
+        {
+            UpdateHealthSlider();
+        }
     }
 
     private IEnumerator CheckDeadRoutine()
@@ -48,5 +61,16 @@ public class EnemyHealth : MonoBehaviour
             GetComponent<ItemSpawner>().DropItem();
             Destroy(gameObject);
         }
+    }
+
+    private void UpdateHealthSlider()
+    {
+        if (healthSlider == null)
+        {
+            healthSlider = GameObject.Find(HeartSlider).GetComponent<Slider>();
+        }
+
+        healthSlider.maxValue = Health;
+        healthSlider.value = currentHealth;
     }
 }

@@ -104,13 +104,13 @@ GameObject:
   - component: {fileID: 9220135122711332896}
   - component: {fileID: 8027167346595341702}
   - component: {fileID: 8618168548426237767}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7303018453809005171
 Transform:
   m_ObjectHideFlags: 0
@@ -352,13 +352,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42954f7cbbe89b04e9d6d9788641f67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnAble: 0
+  smallEnemyPrefab: {fileID: 0}
+  spawnInterval: 0.1
+  spawnOffset: 0.5
+  dashAble: 0
+  dashSpeed: 8
+  dashDuration: 0.25
+  dashCooldown: 3
   enemyType: {fileID: 5202406086576495413}
-  attackRange: 8
-  attackCD: 2
+  attackRange: 15
+  attackCD: 2.5
   stopMovingWhileAttacking: 1
   seeker: {fileID: 9220135122711332896}
-  roaming: 1
   moveSpeed: 2
+  roaming: 1
   nextWayPointDistance: 0.3
   updateContinuePath: 1
 --- !u!114 &8618168548426237767

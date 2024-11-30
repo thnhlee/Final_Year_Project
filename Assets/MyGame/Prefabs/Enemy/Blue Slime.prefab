@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 781313579662056795}
   - component: {fileID: 6049187377275264399}
   - component: {fileID: 3607946823619979926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blue Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -25847065, guid: e9462e91dfcb1244087cad32892de86d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -258,13 +258,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42954f7cbbe89b04e9d6d9788641f67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnAble: 0
+  smallEnemyPrefab: {fileID: 0}
+  spawnInterval: 0.1
+  spawnOffset: 0.5
+  dashAble: 0
+  dashSpeed: 3
+  dashDuration: 0.25
+  dashCooldown: 3
   enemyType: {fileID: 0}
   attackRange: 3
   attackCD: 0.5
   stopMovingWhileAttacking: 0
   seeker: {fileID: 781313579662056795}
-  roaming: 0
   moveSpeed: 2
+  roaming: 0
   nextWayPointDistance: 0.3
   updateContinuePath: 1
 --- !u!114 &3607946823619979926
