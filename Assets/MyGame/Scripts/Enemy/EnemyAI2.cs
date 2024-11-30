@@ -15,6 +15,7 @@ public class EnemyAI2 : MonoBehaviour
 
     [Header("Dash Settings")]
     [SerializeField] private bool dashAble = false;
+    [SerializeField] private TrailRenderer myTrailRenderer;
     [SerializeField] private float dashSpeed = 3f;
     [SerializeField] private float dashDuration = 0.25f;
     [SerializeField] private float dashCooldown = 3f;
@@ -264,7 +265,7 @@ public class EnemyAI2 : MonoBehaviour
         state = State.Dashing;
         float BaseMoveSpeed = moveSpeed;
         moveSpeed *= dashSpeed;
-
+        myTrailRenderer.emitting = true;
 
 
         Vector2 dashDirection;
@@ -294,7 +295,7 @@ public class EnemyAI2 : MonoBehaviour
             {
                 transform.position += (Vector3)(dashDirection * moveSpeed * Time.deltaTime);
                 // Spawn enemies during dash
-                if (Time.time >= lastSpawnTime + spawnInterval)
+                if (Time.time >= lastSpawnTime + spawnInterval && spawnAble == true)
                 {
                     // Calculate spawn position
                     Vector2 spawnPosition = (Vector2)transform.position + Random.insideUnitCircle * spawnOffset;
