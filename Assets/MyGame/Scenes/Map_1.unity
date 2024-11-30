@@ -14481,6 +14481,14 @@ PrefabInstance:
       propertyPath: spawnInterval
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1040517243809967282, guid: 19a2443d6e5f0d444ae0ed580682b423, type: 3}
+      propertyPath: nextWayPointDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040517243809967282, guid: 19a2443d6e5f0d444ae0ed580682b423, type: 3}
+      propertyPath: stopMovingWhileAttacking
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6185977978562485934, guid: 19a2443d6e5f0d444ae0ed580682b423, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.25
