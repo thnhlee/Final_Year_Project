@@ -6,6 +6,7 @@ using UnityEngine;
 public class AreaEntrance : MonoBehaviour
 {
     [SerializeField] private string transitionName;
+    public Canvas UI;
 
     private void Start()
     {
@@ -14,6 +15,11 @@ public class AreaEntrance : MonoBehaviour
             PlayerController.Instance.transform.position = this.transform.position;
             CameraController.Instance.SetPlayerCameraFollow();
             UIFade.Instance.FadeToClear();
+
+            if(transitionName == "Map_1_Entry")
+            {
+                UI.gameObject.SetActive(true);
+            }
         }
     }
 }

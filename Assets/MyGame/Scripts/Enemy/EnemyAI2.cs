@@ -120,7 +120,7 @@ public class EnemyAI2 : MonoBehaviour
     }
 
 
-    //-----Flip the enemy to the correct direction
+    //Flip the enemy to the correct direction
     private void Flip()
     {
         Vector2 currentPosition = transform.position;
