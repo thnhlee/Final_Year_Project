@@ -8,11 +8,11 @@ using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
 {
-
+    [SerializeField] private GameObject UIStats; 
     public bool FacingLeft { get { return facingLeft; } }
 
-    [SerializeField] private float moveSpeed = 1f;
-    [SerializeField] private float dashSpeed = 4f;
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float dashSpeed = 2f;
     [SerializeField] private TrailRenderer myTrailRenderer;
     [SerializeField] private Transform weaponCollider;
 
@@ -22,8 +22,9 @@ public class PlayerController : Singleton<PlayerController>
     private Animator myAnimator;
     private SpriteRenderer mySpriteRenderer;
     private KnockBack knockBack;
-    private float baseMoveSpeed;
+
     private Collider2D playerCollider;
+    private const int maxSpeedIncrease = 11;
 
     private bool facingLeft = false;
     private bool isDashing = false;
@@ -43,10 +44,14 @@ public class PlayerController : Singleton<PlayerController>
     private void Start()
     {
         playerControls.Combat.Dash.performed += _ => Dash();
-
-        baseMoveSpeed = moveSpeed;
+        playerControls.Combat.Stats.performed += _ => Stat();
 
         Inventory.Instance.EquipStartingWeapon();
+    }
+    private void Stat()
+    {
+        UIStats.SetActive(!UIStats.activeSelf);
+        //UIStats.gameObject.SetActive(true);
     }
 
     private void OnEnable()
@@ -112,6 +117,14 @@ public class PlayerController : Singleton<PlayerController>
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
+    public void IncreaseMoveSpeed()
+    {
+        if (moveSpeed < maxSpeedIncrease)
+        {
+            moveSpeed += 1;
+        }
+        
+    }
 
     //DASH
     private void Dash()
@@ -131,7 +144,7 @@ public class PlayerController : Singleton<PlayerController>
         float dashTime = 0.25f;
         float dashCD = 0.5f;
         yield return new WaitForSeconds(dashTime);
-        moveSpeed = baseMoveSpeed;
+        moveSpeed /= dashSpeed;
         Invulnerable(false);
         yield return new WaitForSeconds(dashCD);
         isDashing = false;
@@ -163,4 +176,7 @@ public class PlayerController : Singleton<PlayerController>
             }
         }
     }
+
+
+
 }

@@ -11,8 +11,9 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private float knockBackThrust = 5f;
     [SerializeField] private float damageRecoveryTime = 1f;
 
-    public bool isDead {  get; private set; }
+    public bool isDead { get; private set; }
 
+    private const int maxHealthIncrease = 13;
     private Slider healthSlider;
     private int currentHealth;
     private bool canTakeDamage = true;
@@ -85,7 +86,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     private void PlayerDeath()
     {
-        if(currentHealth <= 0 && !isDead)
+        if (currentHealth <= 0 && !isDead)
         {
             isDead = true;
             Destroy(ActiveWeapon.Instance.gameObject);
@@ -98,12 +99,20 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     private void UpdateHealthSlider()
     {
-        if(healthSlider == null)
+        if (healthSlider == null)
         {
             healthSlider = GameObject.Find(HeartSlider).GetComponent<Slider>();
         }
 
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
+    }
+
+    public void IncreaseMaxHealth()
+    {
+        if(maxHealth < maxHealthIncrease)
+        maxHealth += 1;
+        currentHealth = maxHealth;
+        UpdateHealthSlider(); 
     }
 }
