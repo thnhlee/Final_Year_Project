@@ -11,7 +11,7 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
     {
         if (instance != null && this.gameObject != null)
         {
-            Destroy(this.gameObject);
+           Destroy(this.gameObject);
         }
         else
         {

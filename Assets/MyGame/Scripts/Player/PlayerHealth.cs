@@ -10,7 +10,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private float knockBackThrust = 5f;
     [SerializeField] private float damageRecoveryTime = 1f;
-
+    [SerializeField] private GameObject gameOverUI; 
     public bool isDead { get; private set; }
 
     private const int maxHealthIncrease = 13;
@@ -33,10 +33,11 @@ public class PlayerHealth : Singleton<PlayerHealth>
         knockBack = GetComponent<KnockBack>();
     }
 
-    private void Start()
+    public void Start()
     {
+        isDead = false;
         currentHealth = maxHealth;
-
+        gameOverUI.SetActive(false);
         UpdateHealthSlider();
     }
 
@@ -89,11 +90,11 @@ public class PlayerHealth : Singleton<PlayerHealth>
         if (currentHealth <= 0 && !isDead)
         {
             isDead = true;
-            Destroy(ActiveWeapon.Instance.gameObject);
-
+          //Destroy(ActiveWeapon.Instance.gameObject);
+            ActiveWeapon.Instance.gameObject.SetActive(false);
             currentHealth = 0;
             GetComponent<Animator>().SetTrigger(DeadAnim);
-
+            gameOverUI.SetActive(true);
         }
     }
 

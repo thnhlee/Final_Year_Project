@@ -13,7 +13,8 @@ public class StartMenuControl : MonoBehaviour
     public void OnClickStart()
     {
         // Load the SampleScene and disable the MainMenu scene
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Lobby");
+        Time.timeScale = 1f;
     }
 
     public void OnClickSettings()
