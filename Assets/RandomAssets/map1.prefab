@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5180922083124940185}
   - component: {fileID: 3838271499906800453}
   - component: {fileID: 1098131835561021775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_17 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2604,7 +2604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1654472305662930989}
   - component: {fileID: 3720766732415035515}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ruins_shadow2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2689,7 +2689,8 @@ GameObject:
   - component: {fileID: 235681813754479981}
   - component: {fileID: 1979571297825970927}
   - component: {fileID: 4365824589802982461}
-  m_Layer: 0
+  - component: {fileID: 4618579165780106696}
+  m_Layer: 6
   m_Name: Fetus_shadow1_3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2798,6 +2799,56 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 2, y: 2}
   m_Direction: 0
+--- !u!114 &4618579165780106696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576184095425891439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 4
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0.3
+  m_PointLightOuterRadius: 5
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &600462862770733316
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,7 +2860,7 @@ GameObject:
   - component: {fileID: 2973615584329139567}
   - component: {fileID: 6365948986806474062}
   - component: {fileID: 1301581164229454537}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pustules_shadow2_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2928,7 +2979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7789685420725099478}
   - component: {fileID: 5250823290797309667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Many_eyes_plant_shadow1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3096,7 +3147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 555686848523006274}
   - component: {fileID: 18471572139411216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3264,7 +3315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4014241641767181444}
   - component: {fileID: 941855208405347824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Many_eyes_plant_shadow2_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3348,7 +3399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8296546653582148113}
   - component: {fileID: 8140560855964885310}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3436,7 +3487,7 @@ GameObject:
   - component: {fileID: 7433967344747064803}
   - component: {fileID: 7156418119933339831}
   - component: {fileID: 2245952118835038628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3693,7 +3744,7 @@ GameObject:
   - component: {fileID: 8292739424021127256}
   - component: {fileID: 7967646646213721300}
   - component: {fileID: 1137865086319043194}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rock_eyes_shadow1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3896,7 +3947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8980220734177862287}
   - component: {fileID: 6555916583167572955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3981,7 +4032,7 @@ GameObject:
   - component: {fileID: 3028140211475999829}
   - component: {fileID: 6836614235200298440}
   - component: {fileID: 9207930446769387179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rock1_shadow1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4100,7 +4151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3862770419393963771}
   - component: {fileID: 4582249016848281692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4185,7 +4236,8 @@ GameObject:
   - component: {fileID: 8234170394224900424}
   - component: {fileID: 5259632457368564090}
   - component: {fileID: 4783113457595065031}
-  m_Layer: 0
+  - component: {fileID: 6129468967757549946}
+  m_Layer: 6
   m_Name: Fetus_shadow1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4294,6 +4346,56 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 2, y: 2}
   m_Direction: 0
+--- !u!114 &6129468967757549946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136359729537025514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 4
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0.3
+  m_PointLightOuterRadius: 5
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &3378091885387657037
 GameObject:
   m_ObjectHideFlags: 0
@@ -4305,7 +4407,7 @@ GameObject:
   - component: {fileID: 7860957661044241124}
   - component: {fileID: 5876235367617235669}
   - component: {fileID: 4556441503242470320}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4413,7 +4515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3349089223924068543}
   - component: {fileID: 1727736124747415389}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4498,7 +4600,7 @@ GameObject:
   - component: {fileID: 2866945693817048490}
   - component: {fileID: 8937799419052060430}
   - component: {fileID: 6060546105351416896}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4618,7 +4720,8 @@ GameObject:
   - component: {fileID: 4652606077302395738}
   - component: {fileID: 6863995715870260556}
   - component: {fileID: 2982623825779559289}
-  m_Layer: 0
+  - component: {fileID: 6424431672908962045}
+  m_Layer: 6
   m_Name: Fetus_shadow1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4727,6 +4830,56 @@ CapsuleCollider2D:
   m_Offset: {x: -0.05, y: 0.01}
   m_Size: {x: 3.12, y: 1.91}
   m_Direction: 1
+--- !u!114 &6424431672908962045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583015471306573968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 4
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0.3
+  m_PointLightOuterRadius: 5
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &3683010493974082036
 GameObject:
   m_ObjectHideFlags: 0
@@ -4738,7 +4891,7 @@ GameObject:
   - component: {fileID: 974304932263122891}
   - component: {fileID: 2939344314563539240}
   - component: {fileID: 3895801285506804126}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pustules_shadow1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4941,7 +5094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2094081659792765562}
   - component: {fileID: 2574277765137881576}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bones_shadow1_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5026,7 +5179,7 @@ GameObject:
   - component: {fileID: 532842106324228667}
   - component: {fileID: 5601567120916091561}
   - component: {fileID: 5115742770182048332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Many_eyes_plant_shadow1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5316,7 +5469,8 @@ GameObject:
   - component: {fileID: 8571869740083025672}
   - component: {fileID: 4620623411135202085}
   - component: {fileID: 1417289369057621476}
-  m_Layer: 0
+  - component: {fileID: 2503832544426706345}
+  m_Layer: 6
   m_Name: Ground_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5498,6 +5652,20 @@ CircleCollider2D:
   m_Offset: {x: -0.02, y: 1.99}
   serializedVersion: 2
   m_Radius: 1.72
+--- !u!114 &2503832544426706345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859419001833635059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b16cb41b225fa46b104481d629f714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transparency: 0.8
+  fadeTime: 0.4
 --- !u!1 &5147411874884866622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5509,7 +5677,8 @@ GameObject:
   - component: {fileID: 2759150489999536196}
   - component: {fileID: 4262919282414807545}
   - component: {fileID: 6501711159600659898}
-  m_Layer: 0
+  - component: {fileID: 2611848375265493587}
+  m_Layer: 6
   m_Name: Fetus_shadow2_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5618,6 +5787,56 @@ CapsuleCollider2D:
   m_Offset: {x: -0.33, y: -0.05}
   m_Size: {x: 2.18, y: 2.02}
   m_Direction: 0
+--- !u!114 &2611848375265493587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5147411874884866622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 4
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0.3
+  m_PointLightOuterRadius: 5
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &5309696155660389649
 GameObject:
   m_ObjectHideFlags: 0
@@ -5965,7 +6184,7 @@ GameObject:
   - component: {fileID: 6582249453199233022}
   - component: {fileID: 8701691517766182782}
   - component: {fileID: 3148472769597508951}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rock1_shadow1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6084,7 +6303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6044998984409985080}
   - component: {fileID: 8235995331634040613}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rock_eyes_shadow1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6253,7 +6472,7 @@ GameObject:
   - component: {fileID: 666782865277368159}
   - component: {fileID: 1567149053128071550}
   - component: {fileID: 5539572255328899048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pustules_shadow1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6456,7 +6675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7425894223927173988}
   - component: {fileID: 3716240194765314037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bones_shadow1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6742,7 +6961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7340790176416585999}
   - component: {fileID: 8129877472568083682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6829,7 +7048,8 @@ GameObject:
   - component: {fileID: 4426614397236339690}
   - component: {fileID: 7203454931511182477}
   - component: {fileID: 7440502814802106627}
-  m_Layer: 0
+  - component: {fileID: 4701056790962049022}
+  m_Layer: 6
   m_Name: Ground_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6973,6 +7193,20 @@ CircleCollider2D:
   m_Offset: {x: -0.02, y: 1.99}
   serializedVersion: 2
   m_Radius: 1.72
+--- !u!114 &4701056790962049022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039728205528963071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b16cb41b225fa46b104481d629f714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transparency: 0.8
+  fadeTime: 0.4
 --- !u!1 &7041038312772712447
 GameObject:
   m_ObjectHideFlags: 0
@@ -7116,7 +7350,7 @@ GameObject:
   - component: {fileID: 8997772580336605903}
   - component: {fileID: 837483582496277411}
   - component: {fileID: 5672801857828971625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rock2_shadow2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7488,7 +7722,7 @@ GameObject:
   - component: {fileID: 8078537476677733405}
   - component: {fileID: 4182900218876848927}
   - component: {fileID: 3483561418961311009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pustules_shadow1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18006,7 +18240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1430389714215431351}
   - component: {fileID: 3108365883994063481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18091,7 +18325,7 @@ GameObject:
   - component: {fileID: 3633885974987814426}
   - component: {fileID: 296301466877734451}
   - component: {fileID: 8284753214746286141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bones_shadow2_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18211,7 +18445,7 @@ GameObject:
   - component: {fileID: 8782271158765949231}
   - component: {fileID: 5775979396105083191}
   - component: {fileID: 3518399374654724843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bones_shadow2_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}

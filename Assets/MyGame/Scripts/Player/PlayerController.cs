@@ -52,6 +52,15 @@ public class PlayerController : Singleton<PlayerController>
     {
         UIStats.SetActive(!UIStats.activeSelf);
         //UIStats.gameObject.SetActive(true);
+        // Pause game
+        if( Time.timeScale == 0 )
+        { 
+            Time.timeScale = 1;
+        }
+        else Time.timeScale = 0;
+
+
+            
     }
 
     private void OnEnable()

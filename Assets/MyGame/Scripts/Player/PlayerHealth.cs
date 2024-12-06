@@ -91,9 +91,10 @@ public class PlayerHealth : Singleton<PlayerHealth>
         {
             isDead = true;
           //Destroy(ActiveWeapon.Instance.gameObject);
-            ActiveWeapon.Instance.gameObject.SetActive(false);
             currentHealth = 0;
             GetComponent<Animator>().SetTrigger(DeadAnim);
+            // Pause game
+            Time.timeScale = 0;
             gameOverUI.SetActive(true);
         }
     }
