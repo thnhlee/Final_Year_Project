@@ -11,20 +11,25 @@ public class Destructible : MonoBehaviour
     {
         PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
 
-        if ((collision.gameObject.GetComponent<AttackDamage>() || collision.gameObject.GetComponent<Projectile>()) && player)
+        if (collision.gameObject.GetComponent<AttackDamage>() || collision.gameObject.GetComponent<Projectile>() && player)
         {
             if (gameObject.CompareTag("Temp"))
             {
-                  collisionCount++; 
-                  if (collisionCount >= requiredCollisions)
-                      {
-                            GetComponent<ItemSpawner>().DropItem();
-                            Instantiate(destroyVFX, transform.position, Quaternion.identity);
-                           Destroy(gameObject);
-                           Debug.Log("Hehe");
-                      }
+                collisionCount++;
+                if (collisionCount >= requiredCollisions)
+                {
+                    GetComponent<ItemSpawner>().DropItem();
+                    Instantiate(destroyVFX, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+
+            }
+            else
+            {
+                GetComponent<ItemSpawner>().DropItem();
+                Instantiate(destroyVFX, transform.position, Quaternion.identity);
+                Destroy(gameObject);
             }
         }
-    
     }
 }
