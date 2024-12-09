@@ -12,18 +12,24 @@ EditorBuildSettings:
     path: Assets/MyGame/Scenes/Intro/Story.unity
     guid: 999c51e16bf9eac4f8cb593820b73af2
   - enabled: 1
-    path: Assets/MyGame/Scenes/MainOld.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 0
-    path: Assets/MyGame/Scenes/Map_1.unity
-    guid: 41f117ee98045614cafb5ac1f10d4fa4
-  - enabled: 1
     path: Assets/MyGame/Scenes/Intro/Intro.unity
     guid: db1836236c1150345a2ad6ef50e42ec4
+  - enabled: 1
+    path: Assets/MyGame/Scenes/Lobby.unity
+    guid: 239f52a5d64de154287036cdb72dcfd6
   - enabled: 1
     path: Assets/MyGame/Scenes/Intro/StartMenu.unity
     guid: ee316b103bb3dc043b43fdc985954031
   - enabled: 1
-    path: Assets/MyGame/Scenes/Lobby.unity
-    guid: 239f52a5d64de154287036cdb72dcfd6
+    path: Assets/MyGame/Scenes/Main.unity
+    guid: c630727fa6d44174b82a6fed68263c15
+  - enabled: 1
+    path: Assets/MyGame/Scenes/Boss.unity
+    guid: f4248a6909574524d8be8ae088d48d68
+  - enabled: 1
+    path: Assets/MyGame/Scenes/LobbyMap2.unity
+    guid: 01fbedf808884fd4bb1ae8a4b6dd9153
+  - enabled: 1
+    path: Assets/MyGame/Scenes/Map2.unity
+    guid: 587bb382ec1cd1f4f87229efaf3ad4a5
   m_configObjects: {}

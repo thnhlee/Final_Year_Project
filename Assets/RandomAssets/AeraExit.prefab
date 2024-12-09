@@ -29,7 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.16, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5760877483358920128}
   m_Father: {fileID: 0}
@@ -91,8 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29511cd084943f4bbb0a8c9bbc34237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Map_1
-  sceneTransitionName: Map_1_Entry
+  sceneToLoad: Boss
+  sceneTransitionName: BossEntry
 --- !u!1 &1358529103488771259
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ Transform:
   m_GameObject: {fileID: 1358529103488771259}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.75, y: -0.31, z: 0}
+  m_LocalPosition: {x: -50, y: -14.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -137,4 +137,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ee09f837159534aaae87991b34197d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionName: Main_Entry
+  transitionName: BossEntry
+  UI: {fileID: 0}

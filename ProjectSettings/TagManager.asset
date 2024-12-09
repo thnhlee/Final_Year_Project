@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - Bosses
   - Temp
+  - Audio
+  - GameWin
+  - ActivehealthSlider
   layers:
   - Default
   - TransparentFX

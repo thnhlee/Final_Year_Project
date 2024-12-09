@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,15 @@ using UnityEngine;
 public class AreaEntrance : MonoBehaviour
 {
     [SerializeField] private string transitionName;
-    public Canvas UI;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        GameObject[] audioGameObjects = GameObject.FindGameObjectsWithTag("Audio");
+        //Find the first GameObject with the AudioManager component
+        audioManager = Array.Find(audioGameObjects, go => go.GetComponent<AudioManager>() != null)?.GetComponent<AudioManager>();
+
+    }
 
     private void Start()
     {
@@ -15,11 +24,8 @@ public class AreaEntrance : MonoBehaviour
             PlayerController.Instance.transform.position = this.transform.position;
             CameraController.Instance.SetPlayerCameraFollow();
             UIFade.Instance.FadeToClear();
+            audioManager.PlaySFX(audioManager.portalOut);
 
-            if(transitionName == "Map_1_Entry")
-            {
-                UI.gameObject.SetActive(true);
-            }
         }
     }
 }

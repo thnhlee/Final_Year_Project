@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 8773053690773845035}
   - component: {fileID: 2216250975195463646}
   - component: {fileID: 8481823317492150191}
+  - component: {fileID: 1788948170335961002}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -396,7 +397,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.39, y: 0, z: 0}
-  m_LocalScale: {x: 0.72774, y: 0.7346, z: 1}
+  m_LocalScale: {x: 0.9, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 360955554915048434}
@@ -527,9 +528,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.038380057, y: -0.17939998}
-  m_Size: {x: 1.7567877, y: 1.5811088}
-  m_Direction: 1
+  m_Offset: {x: -0.106560014, y: -0.038382284}
+  m_Size: {x: 1.56, y: 2.84}
+  m_Direction: 0
 --- !u!95 &8399142195834676318
 Animator:
   serializedVersion: 5
@@ -564,7 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIStats: {fileID: 0}
-  moveSpeed: 4
+  moveSpeed: 10
   dashSpeed: 2
   myTrailRenderer: {fileID: 7460668406385151741}
   weaponCollider: {fileID: 8901340925592863492}
@@ -580,10 +581,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eaf16939492e5547a3327870d8acd65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 5
   knockBackThrust: 5
   damageRecoveryTime: 1
   gameOverUI: {fileID: 0}
+  gameWin: {fileID: 0}
 --- !u!114 &2216250975195463646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,3 +613,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitFlashMat: {fileID: 2100000, guid: bbfae7498294e6e45a9e09d7b48eb064, type: 2}
   restoreDefaultMatTime: 0.1
+--- !u!114 &1788948170335961002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8444304460198374883}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.86
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 7
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}

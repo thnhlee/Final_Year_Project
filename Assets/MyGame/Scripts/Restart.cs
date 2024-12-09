@@ -21,7 +21,9 @@ public class Restart : MonoBehaviour
     {
         SceneManagement.Instance.SetTransitionName(spawnPointName);
         PlayerHealth.Instance.Start();
+        UIFade.Instance.FadeToClear();
         Time.timeScale = 1f;
         SceneManager.LoadScene("StartMenu");
+        EnemyHealth[] enemyHealths = FindObjectsOfType<EnemyHealth>(); foreach (EnemyHealth enemyHealth in enemyHealths) { enemyHealth.Start(); }
     }
 }

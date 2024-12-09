@@ -15,6 +15,6 @@ public class LoadM : MonoBehaviour
     IEnumerator WaitForIntro()
     {
         yield return new WaitForSeconds(waitTime);
-        SceneManager.LoadScene(5); 
+        SceneManager.LoadScene(4); 
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 [AddComponentMenu("ThinhLe/PlayerHealth")]
 
 public class PlayerHealth : Singleton<PlayerHealth>
@@ -11,6 +12,9 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private float knockBackThrust = 5f;
     [SerializeField] private float damageRecoveryTime = 1f;
     [SerializeField] private GameObject gameOverUI; 
+    [SerializeField] private GameObject gameWin; 
+
+    
     public bool isDead { get; private set; }
 
     private const int maxHealthIncrease = 13;
@@ -28,7 +32,6 @@ public class PlayerHealth : Singleton<PlayerHealth>
     protected override void Awake()
     {
         base.Awake();
-
         hitFlash = GetComponent<HitFlash>();
         knockBack = GetComponent<KnockBack>();
     }
@@ -38,6 +41,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         isDead = false;
         currentHealth = maxHealth;
         gameOverUI.SetActive(false);
+        gameWin.SetActive(false);
         UpdateHealthSlider();
     }
 
@@ -90,11 +94,10 @@ public class PlayerHealth : Singleton<PlayerHealth>
         if (currentHealth <= 0 && !isDead)
         {
             isDead = true;
-          //Destroy(ActiveWeapon.Instance.gameObject);
             currentHealth = 0;
             GetComponent<Animator>().SetTrigger(DeadAnim);
             // Pause game
-            Time.timeScale = 0;
+            // Time.timeScale = 0;
             gameOverUI.SetActive(true);
         }
     }
