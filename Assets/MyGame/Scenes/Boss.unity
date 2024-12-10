@@ -5554,7 +5554,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2069960063531271818, guid: 19a2443d6e5f0d444ae0ed580682b423, type: 3}
       propertyPath: Health
-      value: 40
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2069960063531271818, guid: 19a2443d6e5f0d444ae0ed580682b423, type: 3}
       propertyPath: gameWin

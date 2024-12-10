@@ -73,7 +73,15 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
         ScreenShake.Instance.ShakeScreen();
 
-        knockBack.GetKnockedBack(hitTransform.gameObject.transform, knockBackThrust);
+        if (hitTransform.CompareTag("Bosses"))
+        {
+            knockBack.GetKnockedBack(hitTransform.gameObject.transform, 30);
+        }
+        else
+        {
+            knockBack.GetKnockedBack(hitTransform.gameObject.transform, knockBackThrust);
+        }
+        
         StartCoroutine(hitFlash.FlashRoutine());
 
         canTakeDamage = false;
@@ -123,7 +131,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     {
         if(maxHealth < maxHealthIncrease)
         maxHealth += 1;
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
         UpdateHealthSlider(); 
     }
 }
