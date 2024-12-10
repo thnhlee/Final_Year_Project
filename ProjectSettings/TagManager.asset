@@ -9,8 +9,7 @@ TagManager:
   - Bosses
   - Temp
   - Audio
-  - GameWin
-  - ActivehealthSlider
+  - Dog
   layers:
   - Default
   - TransparentFX

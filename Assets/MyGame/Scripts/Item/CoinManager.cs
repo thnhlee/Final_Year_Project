@@ -50,7 +50,7 @@ public class CoinManager : Singleton<CoinManager>
     private void CoinsMessage() 
     {
         notEnoughCoinsMessage = GameObject.Find(NotEnoughCoins).GetComponent<TMP_Text>();
-        notEnoughCoinsMessage.text = "Not enough coins! You need 1 coin to upgrade"; 
+        notEnoughCoinsMessage.text = "Not enough coins!"; 
         StartCoroutine(ClearMessageAfterDelay()); 
     }
 

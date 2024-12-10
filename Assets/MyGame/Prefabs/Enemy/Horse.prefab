@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f49b2585099814cb08fe98c062a4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 30
+  Health: 25
   deathVfx: {fileID: 2482867346892625661, guid: f1473bf39b6a69a4681de4acb2f4a4cd, type: 3}
   knockBackThrust: 20
   healthSlider: {fileID: 0}
@@ -312,10 +312,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3741276149259401493, guid: 3056b3f70495b0446a465ce6686714b5, type: 3}
-  bulletMoveSpeed: 4
+  bulletMoveSpeed: 5
   burstCount: 6
-  timeBtwBurst: 0.2
-  reload: 5
+  timeBtwBurst: 0.3
+  reload: 4.5
 --- !u!114 &577000311935798868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,13 +357,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnAble: 1
-  smallEnemyPrefab: {fileID: 1512605490175318286, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
+  smallEnemyPrefab: {fileID: 8268377783663192927, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
   spawnInterval: 1
   spawnOffset: 1.5
   dashAble: 1
   myTrailRenderer: {fileID: 6573614407968130264}
   dashSpeed: 3
-  dashDuration: 3
+  dashDuration: 2
   dashCooldown: 7
   enemyType: {fileID: 7074325834821246465}
   attackRange: 20

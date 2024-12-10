@@ -365,6 +365,10 @@ PrefabInstance:
       propertyPath: BosshealthSlider
       value: 
       objectReference: {fileID: 928549237142191507}
+    - target: {fileID: 8773053690773845035, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
+      propertyPath: damageRecoveryTime
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 9095116781906590122, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
       propertyPath: Resume
       value: 
@@ -698,7 +702,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1876920613}
+  - {fileID: 1302373273}
+  - {fileID: 680569252}
   m_Father: {fileID: 5736800989101652297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -718,7 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5403ed5cd55b73e45ab3feff43775687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOver: {fileID: 1876920612}
+  GameOver: {fileID: 0}
   spawnPointName: LobbyEntry
 --- !u!222 &657148711
 CanvasRenderer:
@@ -818,13 +823,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680569251}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.9090909}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 635932045}
-  m_Father: {fileID: 1876920613}
+  m_Father: {fileID: 657148709}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1538,13 +1543,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302373272}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1826979241}
-  m_Father: {fileID: 1876920613}
+  m_Father: {fileID: 657148709}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2341,80 +2346,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826979240}
   m_CullTransparentMesh: 1
---- !u!1 &1876920612
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1876920613}
-  - component: {fileID: 1876920614}
-  m_Layer: 0
-  m_Name: videoGameOver
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1876920613
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1876920612}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 680569252}
-  - {fileID: 1302373273}
-  m_Father: {fileID: 657148709}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!328 &1876920614
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1876920612}
-  m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 84a9353a2e21ad04ebc00883bfe0c08c, type: 3}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 1a9a26ed0a567164e98a66baceec3740, type: 2}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: <noninit>
-  m_RenderMode: 2
-  m_AspectRatio: 2
-  m_DataSource: 0
-  m_TimeUpdateMode: 2
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
-  m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
-  m_Looping: 0
-  m_WaitForFirstFrame: 1
-  m_FrameReadyEventEnabled: 0
-  m_VideoShaders: []
 --- !u!1 &2056072843
 GameObject:
   m_ObjectHideFlags: 0
@@ -6513,10 +6444,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2069960063531271818, guid: 19a2443d6e5f0d444ae0ed580682b423, type: 3}
-      propertyPath: Health
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2069960063531271818, guid: 19a2443d6e5f0d444ae0ed580682b423, type: 3}
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 5081185446938998744}
@@ -6563,6 +6490,10 @@ PrefabInstance:
     - target: {fileID: 6778417506700774125, guid: 19a2443d6e5f0d444ae0ed580682b423, type: 3}
       propertyPath: m_Name
       value: Horse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074325834821246465, guid: 19a2443d6e5f0d444ae0ed580682b423, type: 3}
+      propertyPath: timeBtwBurst
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

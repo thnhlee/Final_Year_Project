@@ -271,14 +271,14 @@ public class EnemyAI2 : MonoBehaviour
 
 
         Vector2 dashDirection;
-        
-        //if (gameObject.CompareTag("Bosses"))
-        //{
-        //    //Dash forward player
-        //    dashDirection = ((Vector2)PlayerController.Instance.transform.position - (Vector2)transform.position).normalized;
 
-        //}
-        //else
+        if (gameObject.CompareTag("Dog"))
+        {
+            //Dash forward player
+            dashDirection = ((Vector2)PlayerController.Instance.transform.position - (Vector2)transform.position).normalized;
+
+        }
+        else
         {
             //random dash
             float randomAngle = Random.Range(0f, 360f);
