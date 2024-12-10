@@ -128,19 +128,23 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 866809275}
     m_Modifications:
+    - target: {fileID: 3506482080119954311, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
+      propertyPath: myTrailRenderer
+      value: 
+      objectReference: {fileID: 1081044379}
     - target: {fileID: 6998588295889080443, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -52.231876
+      value: -52.988003
       objectReference: {fileID: 0}
     - target: {fileID: 6998588295889080443, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.029437542
+      value: -0.7775122
       objectReference: {fileID: 0}
     - target: {fileID: 6998588295889080443, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.07662892
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6998588295889080443, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -179,6 +183,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
+--- !u!4 &253976590 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6998588295889080443, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
+  m_PrefabInstance: {fileID: 253976589}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &284938585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -775,6 +784,8 @@ Transform:
   - {fileID: 878293567220317066}
   - {fileID: 2108422421}
   - {fileID: 284938586}
+  - {fileID: 253976590}
+  - {fileID: 1581778202}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &969541180
@@ -961,6 +972,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
+--- !u!96 &1081044379 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 7460668406385151741, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
+  m_PrefabInstance: {fileID: 1081044378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1081044380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8444304460198374883, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
@@ -1656,19 +1672,23 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 866809275}
     m_Modifications:
+    - target: {fileID: 3506482080119954311, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
+      propertyPath: myTrailRenderer
+      value: 
+      objectReference: {fileID: 1081044379}
     - target: {fileID: 6998588295889080443, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -65.65584
+      value: -66.411964
       objectReference: {fileID: 0}
     - target: {fileID: 6998588295889080443, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.351774
+      value: 12.6037
       objectReference: {fileID: 0}
     - target: {fileID: 6998588295889080443, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.07662892
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6998588295889080443, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1707,6 +1727,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
+--- !u!4 &1581778202 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6998588295889080443, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
+  m_PrefabInstance: {fileID: 1581778201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1698170129 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3683010493974082036, guid: ff8ab5b0691e84e41b72bf9335d04633, type: 3}
@@ -2370,5 +2395,3 @@ SceneRoots:
   - {fileID: 1750562944945211694}
   - {fileID: 720405996}
   - {fileID: 630677327}
-  - {fileID: 253976589}
-  - {fileID: 1581778201}
