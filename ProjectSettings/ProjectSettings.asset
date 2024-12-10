@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Final Year Project
-  defaultCursor: {fileID: 2800000, guid: cf1071251167cbd4ea6c4910fc146865, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 7917fdb318e798244acf62e8c29268bc, type: 3}
   cursorHotspot: {x: 128, y: 128}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

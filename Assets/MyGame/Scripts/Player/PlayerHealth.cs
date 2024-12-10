@@ -12,9 +12,8 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private float knockBackThrust = 5f;
     [SerializeField] private float damageRecoveryTime = 1f;
     [SerializeField] private GameObject gameOverUI; 
-    [SerializeField] private GameObject gameWin; 
+    [SerializeField] private GameObject gameWin;
 
-    
     public bool isDead { get; private set; }
 
     private const int maxHealthIncrease = 13;
@@ -27,7 +26,8 @@ public class PlayerHealth : Singleton<PlayerHealth>
     const string HeartSlider = "Heart Slider";
     const string BaseRespawn = "Base";
     readonly int DeadAnim = Animator.StringToHash("isDead");
-
+    private const string BossHealthSliderUI = "Boss Heart Slider";
+    
 
     protected override void Awake()
     {
@@ -99,6 +99,12 @@ public class PlayerHealth : Singleton<PlayerHealth>
             // Pause game
             // Time.timeScale = 0;
             gameOverUI.SetActive(true);
+
+            GameObject bossHealthSlider = GameObject.Find(BossHealthSliderUI);
+            if (bossHealthSlider != null)
+            {
+                bossHealthSlider.SetActive(false);
+            }
         }
     }
 

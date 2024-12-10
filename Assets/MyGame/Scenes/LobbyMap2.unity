@@ -137,11 +137,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1346851795388987927, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -48.42
+      value: 3.02
       objectReference: {fileID: 0}
     - target: {fileID: 1346851795388987927, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.5300007
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: 1346851795388987927, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -268,7 +268,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6917897265542789413, guid: 469b3e45986e530489209fe66c683e14, type: 3}
+      propertyPath: m_Size.x
+      value: 8.97646
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917897265542789413, guid: 469b3e45986e530489209fe66c683e14, type: 3}
+      propertyPath: m_Size.y
+      value: 8.97646
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917897265542789413, guid: 469b3e45986e530489209fe66c683e14, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917897265542789413, guid: 469b3e45986e530489209fe66c683e14, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.2667699
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917897265542789413, guid: 469b3e45986e530489209fe66c683e14, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.4967694
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6917897265542789413, guid: 469b3e45986e530489209fe66c683e14, type: 3}
     m_RemovedGameObjects:
     - {fileID: 604264861338487135, guid: 469b3e45986e530489209fe66c683e14, type: 3}
     m_AddedGameObjects:
@@ -276,10 +297,77 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1350176636}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4422509200467285007, guid: 469b3e45986e530489209fe66c683e14, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1069733881}
     - targetCorrespondingSourceObject: {fileID: 1634375571434903310, guid: 469b3e45986e530489209fe66c683e14, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2029470738}
   m_SourcePrefab: {fileID: 100100000, guid: 469b3e45986e530489209fe66c683e14, type: 3}
+--- !u!1 &1069733880 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4422509200467285007, guid: 469b3e45986e530489209fe66c683e14, type: 3}
+  m_PrefabInstance: {fileID: 1069733879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!68 &1069733881
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069733880}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.53551674, y: -5.754115}
+  - {x: 1.1998763, y: -4.833456}
+  - {x: 0.31157446, y: -2.9395707}
+  - {x: -5.6704774, y: -0.45933294}
+  - {x: -3.9165003, y: 0.29351187}
+  - {x: -1.8982422, y: -1.153079}
+  - {x: 3.211532, y: -2.1497693}
+  - {x: 7.243773, y: 2.97748}
+  - {x: 7.6074305, y: 4.6282206}
+  - {x: 6.7627015, y: 5.4368715}
+  - {x: 4.5489993, y: 4.5634537}
+  - {x: -0.12715816, y: 4.7934694}
+  - {x: -0.80148864, y: 5.641719}
+  - {x: -1.6558452, y: 4.6532593}
+  - {x: -3.777999, y: 3.6430435}
+  - {x: -4.654336, y: 2.1757984}
+  - {x: -6.567575, y: 0.30870485}
+  - {x: -7.877856, y: -0.66687775}
+  - {x: -6.7864456, y: -2.1924486}
+  - {x: -0.6481867, y: -5.7212334}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1001 &1077028094
 PrefabInstance:
   m_ObjectHideFlags: 0

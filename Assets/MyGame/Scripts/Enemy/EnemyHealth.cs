@@ -31,14 +31,12 @@ public class EnemyHealth : MonoBehaviour
     {
         if (gameWin == null)
         {
-            gameWin = GameObject.FindObjectsOfType<GameObject>(true)
-                .FirstOrDefault(obj => obj.name == GameWinUI);
+            gameWin = GameObject.FindObjectsOfType<GameObject>(true).FirstOrDefault(obj => obj.name == GameWinUI);
         }
 
         if (healthSlider == null)
         {
-            var healthSliderGO = GameObject.FindObjectsOfType<GameObject>(true)
-                .FirstOrDefault(obj => obj.name == HealthSliderUI);
+            var healthSliderGO = GameObject.FindObjectsOfType<GameObject>(true).FirstOrDefault(obj => obj.name == HealthSliderUI);
             if (healthSliderGO != null)
             {
                 healthSlider = healthSliderGO.GetComponent<Slider>();

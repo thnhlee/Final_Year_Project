@@ -189,15 +189,19 @@ PrefabInstance:
     - target: {fileID: 8773053690773845035, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
       propertyPath: gameWin
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2749591024010686193}
     - target: {fileID: 8773053690773845035, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
       propertyPath: gameOverUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4934063263254613619}
+    - target: {fileID: 8773053690773845035, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
+      propertyPath: BosshealthSlider
+      value: 
+      objectReference: {fileID: 928549237142191507}
     - target: {fileID: 9095116781906590122, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
       propertyPath: UIStats
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 717946769721786457}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2368,7 +2372,7 @@ RectTransform:
   m_Father: {fileID: 5044109485778146811}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.5980225, y: 0}
   m_SizeDelta: {x: 3.1959, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2896,7 +2900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2742648883526471125
 GameObject:
   m_ObjectHideFlags: 0

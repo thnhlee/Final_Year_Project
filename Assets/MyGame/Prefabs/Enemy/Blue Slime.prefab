@@ -81,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -25847065, guid: e9462e91dfcb1244087cad32892de86d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -191,6 +191,7 @@ MonoBehaviour:
   Health: 3
   deathVfx: {fileID: 2482867346892625661, guid: 832eda4cfe4f5da4b9996c2fad7f1ecb, type: 3}
   knockBackThrust: 15
+  healthSlider: {fileID: 0}
 --- !u!114 &6292318605148737088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +264,7 @@ MonoBehaviour:
   spawnInterval: 0.1
   spawnOffset: 0.5
   dashAble: 0
+  myTrailRenderer: {fileID: 0}
   dashSpeed: 3
   dashDuration: 0.25
   dashCooldown: 3

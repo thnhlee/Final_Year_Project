@@ -10,8 +10,11 @@ public class EnemyAI2 : MonoBehaviour
     [Header("Spawn Settings")]
     [SerializeField] private bool spawnAble = false;
     [SerializeField] private GameObject smallEnemyPrefab;
-    [SerializeField] private float spawnInterval = 10f; //time to spawn enemy
-    [SerializeField] private float spawnOffset = 1f;//spawn distance from the horse
+
+    //time to spawn enemy
+    [SerializeField] private float spawnInterval = 10f;
+    //spawn distance from the horse
+    [SerializeField] private float spawnOffset = 1f;
 
     [Header("Dash Settings")]
     [SerializeField] private bool dashAble = false;
@@ -33,7 +36,6 @@ public class EnemyAI2 : MonoBehaviour
     private SpriteRenderer mySpriteRenderer;
 
     //Dash
-
     private bool isDashing = false;
     private bool canDash = true;
     private float baseMoveSpeed;
