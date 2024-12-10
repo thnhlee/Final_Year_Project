@@ -89,7 +89,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         canTakeDamage = true;
     }
 
-    private void PlayerDeath()
+    public void PlayerDeath()
     {
         if (currentHealth <= 0 && !isDead)
         {

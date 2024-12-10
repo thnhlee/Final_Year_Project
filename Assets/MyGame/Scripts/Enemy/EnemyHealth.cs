@@ -1,30 +1,25 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 [AddComponentMenu("ThinhLe/EnemyHealth")]
 
-
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int Health = 3;
     [SerializeField] private GameObject deathVfx;
     [SerializeField] private float knockBackThrust = 15f;
-    private GameObject gameWin; 
-    private GameObject ActivehealthSlider;
-
+    private GameObject gameWin;
     private int currentHealth;
     private KnockBack knockBack;
     private HitFlash hitFlash;
-    private Slider healthSlider;
+    [SerializeField] private Slider healthSlider;
 
 
-
-    const string GameWinUI = "GameWin";
-    const string HeartSlider = "Boss Heart Slider";
+    private const string GameWinUI = "GameWin";
+    private const string HealthSliderUI = "Boss Heart Slider";
 
     private void Awake()
     {
@@ -36,12 +31,18 @@ public class EnemyHealth : MonoBehaviour
     {
         if (gameWin == null)
         {
-            gameWin = GameObject.FindObjectsOfType<GameObject>(true).FirstOrDefault(obj => obj.name == GameWinUI);
+            gameWin = GameObject.FindObjectsOfType<GameObject>(true)
+                .FirstOrDefault(obj => obj.name == GameWinUI);
         }
 
-        if (ActivehealthSlider == null)
+        if (healthSlider == null)
         {
-            ActivehealthSlider = GameObject.Find(HeartSlider);
+            var healthSliderGO = GameObject.FindObjectsOfType<GameObject>(true)
+                .FirstOrDefault(obj => obj.name == HealthSliderUI);
+            if (healthSliderGO != null)
+            {
+                healthSlider = healthSliderGO.GetComponent<Slider>();
+            }
         }
     }
 
@@ -51,7 +52,7 @@ public class EnemyHealth : MonoBehaviour
         FindUIElements();
         if (gameObject.CompareTag("Bosses"))
         {
-            ActivehealthSlider.SetActive(true);
+            healthSlider.gameObject.SetActive(true);
             UpdateHealthSlider();
         }
     }
@@ -66,6 +67,7 @@ public class EnemyHealth : MonoBehaviour
         {
             UpdateHealthSlider();
         }
+        
     }
 
     private IEnumerator CheckDeadRoutine()
@@ -85,9 +87,9 @@ public class EnemyHealth : MonoBehaviour
             {
                 FindUIElements();
                 Time.timeScale = 0;
-                if (ActivehealthSlider != null)
+                if (healthSlider != null)
                 {
-                    ActivehealthSlider.SetActive(false);
+                    healthSlider.gameObject.SetActive(false);
                 }
                 if (gameWin != null)
                 {
@@ -101,12 +103,10 @@ public class EnemyHealth : MonoBehaviour
 
     private void UpdateHealthSlider()
     {
-        if (healthSlider == null)
+        if (healthSlider != null)
         {
-            healthSlider = GameObject.Find(HeartSlider).GetComponent<Slider>();
+            healthSlider.maxValue = Health;
+            healthSlider.value = currentHealth;
         }
-
-        healthSlider.maxValue = Health;
-        healthSlider.value = currentHealth;
     }
 }

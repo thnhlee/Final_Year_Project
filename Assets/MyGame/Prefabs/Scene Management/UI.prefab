@@ -1334,7 +1334,7 @@ GameObject:
   - component: {fileID: 7953843149187241426}
   m_Layer: 0
   m_Name: GameWin
-  m_TagString: Untagged
+  m_TagString: GameWin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2993,7 +2993,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5701000723106913369}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: ad5d420812a05cc4291900910dce38f9, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 235d974c08311fd48a7aa18e34d5f7f7, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -6035,13 +6035,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5736800988896255063}
     m_Modifications:
+    - target: {fileID: 150325792899448997, guid: 0fdcdef535b6f964db19c3488bc69966, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 750434210754602526, guid: 0fdcdef535b6f964db19c3488bc69966, type: 3}
       propertyPath: m_Name
       value: 'Boss Heart '
       objectReference: {fileID: 0}
     - target: {fileID: 750434210754602526, guid: 0fdcdef535b6f964db19c3488bc69966, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 750434210754602526, guid: 0fdcdef535b6f964db19c3488bc69966, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 750434210754602526, guid: 0fdcdef535b6f964db19c3488bc69966, type: 3}
+      propertyPath: m_TagString
+      value: Bosses
       objectReference: {fileID: 0}
     - target: {fileID: 1911828495541263034, guid: 0fdcdef535b6f964db19c3488bc69966, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6129,6 +6141,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1951994951530725487, guid: 0fdcdef535b6f964db19c3488bc69966, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2555574156678500225, guid: 0fdcdef535b6f964db19c3488bc69966, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579022766255286377, guid: 0fdcdef535b6f964db19c3488bc69966, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201035178318277495, guid: 0fdcdef535b6f964db19c3488bc69966, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
