@@ -16,7 +16,8 @@ public class StatsUpgrade : MonoBehaviour
     const string SpeedSlider = "Upgrade Speed Slider";
 
     private CoinManager coinManager;
-
+    private int healthUpgradeCost = 1;
+    private int speedUpgradeCost = 1;
 
     private void Start()
     {
@@ -30,13 +31,14 @@ public class StatsUpgrade : MonoBehaviour
     public void OnClickHealth()
     {
         playerHealth = PlayerHealth.Instance;
-        if(coinManager.SpendCoin(1))
+        if(coinManager.SpendCoin(healthUpgradeCost))
         {
             UpgradeHealth();
             UpdateHealthSlider();
+            healthUpgradeCost += 1;
         }
-
     }
+
     private void UpgradeHealth()
     {
         if (currentHealthUp < 10)
@@ -45,6 +47,7 @@ public class StatsUpgrade : MonoBehaviour
             playerHealth.IncreaseMaxHealth();
         }
     }
+
     private void UpdateHealthSlider()
     {
         
@@ -59,12 +62,12 @@ public class StatsUpgrade : MonoBehaviour
     public void OnClickSpeed()
     {
         playerController = PlayerController.Instance;
-        if (coinManager.SpendCoin(1))
+        if (coinManager.SpendCoin(speedUpgradeCost))
         {
             UpgradeSpeed();
             UpdateSpeedSlider();
+            speedUpgradeCost += 1;
         }
-
     }
 
     private void UpgradeSpeed()

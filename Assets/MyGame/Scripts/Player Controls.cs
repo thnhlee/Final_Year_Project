@@ -234,6 +234,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PauseGame"",
+            ""id"": ""58087e91-dd31-4ea3-a95d-dfb8e512a5a7"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d9343e0-2cb0-4e29-8a34-2190611a8191"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c910c4b9-0004-4313-97b0-c8117f427a45"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -249,6 +277,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Inventory
         m_Inventory = asset.FindActionMap("Inventory", throwIfNotFound: true);
         m_Inventory_Keyboard = m_Inventory.FindAction("Keyboard", throwIfNotFound: true);
+        // PauseGame
+        m_PauseGame = asset.FindActionMap("PauseGame", throwIfNotFound: true);
+        m_PauseGame_Pause = m_PauseGame.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -460,6 +491,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public InventoryActions @Inventory => new InventoryActions(this);
+
+    // PauseGame
+    private readonly InputActionMap m_PauseGame;
+    private List<IPauseGameActions> m_PauseGameActionsCallbackInterfaces = new List<IPauseGameActions>();
+    private readonly InputAction m_PauseGame_Pause;
+    public struct PauseGameActions
+    {
+        private @PlayerControls m_Wrapper;
+        public PauseGameActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pause => m_Wrapper.m_PauseGame_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_PauseGame; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PauseGameActions set) { return set.Get(); }
+        public void AddCallbacks(IPauseGameActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PauseGameActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PauseGameActionsCallbackInterfaces.Add(instance);
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+        }
+
+        private void UnregisterCallbacks(IPauseGameActions instance)
+        {
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+        }
+
+        public void RemoveCallbacks(IPauseGameActions instance)
+        {
+            if (m_Wrapper.m_PauseGameActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPauseGameActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PauseGameActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PauseGameActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PauseGameActions @PauseGame => new PauseGameActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -473,5 +550,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IInventoryActions
     {
         void OnKeyboard(InputAction.CallbackContext context);
+    }
+    public interface IPauseGameActions
+    {
+        void OnPause(InputAction.CallbackContext context);
     }
 }

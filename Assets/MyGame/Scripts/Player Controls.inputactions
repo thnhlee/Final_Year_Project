@@ -212,6 +212,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "PauseGame",
+            "id": "58087e91-dd31-4ea3-a95d-dfb8e512a5a7",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "4d9343e0-2cb0-4e29-8a34-2190611a8191",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c910c4b9-0004-4313-97b0-c8117f427a45",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

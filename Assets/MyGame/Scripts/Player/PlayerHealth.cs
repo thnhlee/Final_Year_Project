@@ -131,7 +131,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     {
         if(maxHealth < maxHealthIncrease)
         maxHealth += 1;
-        //currentHealth = maxHealth;
+        currentHealth += 1;
         UpdateHealthSlider(); 
     }
 }

@@ -268,10 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f49b2585099814cb08fe98c062a4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 39
+  Health: 30
   deathVfx: {fileID: 2482867346892625661, guid: f1473bf39b6a69a4681de4acb2f4a4cd, type: 3}
   knockBackThrust: 20
-  gameWin: {fileID: 0}
+  healthSlider: {fileID: 0}
 --- !u!114 &6453622610515501603
 MonoBehaviour:
   m_ObjectHideFlags: 0

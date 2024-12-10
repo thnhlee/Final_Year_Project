@@ -8,7 +8,8 @@ using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
 {
-    [SerializeField] private GameObject UIStats; 
+    [SerializeField] private GameObject UIStats;
+    [SerializeField] private GameObject Resume;
     public bool FacingLeft { get { return facingLeft; } }
 
     [SerializeField] private float moveSpeed = 2f;
@@ -46,22 +47,29 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerControls.Combat.Dash.performed += _ => Dash();
         playerControls.Combat.Stats.performed += _ => Stat();
+        playerControls.PauseGame.Pause.performed += _ => OnClickResume();
 
         Inventory.Instance.EquipStartingWeapon();
     }
+
     private void Stat()
     {
         UIStats.SetActive(!UIStats.activeSelf);
-        //UIStats.gameObject.SetActive(true);
-        // Pause game
         if( Time.timeScale == 0 )
         { 
             Time.timeScale = 1;
         }
+        else Time.timeScale = 0;      
+    }
+
+    private void OnClickResume()
+    {
+        Resume.SetActive(!Resume.activeSelf);
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
         else Time.timeScale = 0;
-
-
-            
     }
 
     private void OnEnable()

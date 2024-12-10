@@ -8,6 +8,7 @@ public class Restart : MonoBehaviour
     [SerializeField] private GameObject GameOver;
     [SerializeField] private string spawnPointName;
 
+
     public void OnClickReplay()
     {
         SceneManagement.Instance.SetTransitionName(spawnPointName);
@@ -15,6 +16,12 @@ public class Restart : MonoBehaviour
         PlayerHealth.Instance.Start();
         UIFade.Instance.FadeToClear();
         Time.timeScale = 1f;
+    }
+
+    public void OnClickResume()
+    {
+        Time.timeScale = 1;
+        gameObject.SetActive(false);
     }
 
     public void OnClickSettings()

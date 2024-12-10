@@ -6,6 +6,8 @@ using TMPro;
 
 public class CoinManager : Singleton<CoinManager>
 {
+
+
     private TMP_Text coinText;
     private int currentCoin = 0;
     const string CoinCounter = "Coin Counter";
