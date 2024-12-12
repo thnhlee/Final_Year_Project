@@ -8,7 +8,7 @@ using System;
 
 public class PlayerHealth : Singleton<PlayerHealth>
 {
-    [SerializeField] private int maxHealth = 3;
+    [SerializeField] public int maxHealth = 3;
     [SerializeField] private float knockBackThrust = 5f;
     [SerializeField] private float damageRecoveryTime = 1f;
     [SerializeField] private GameObject gameOverUI; 
@@ -18,7 +18,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     private const int maxHealthIncrease = 13;
     private Slider healthSlider;
-    private int currentHealth;
+    public int currentHealth;
     private bool canTakeDamage = true;
     private KnockBack knockBack;
     private HitFlash hitFlash;
@@ -116,7 +116,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         }
     }
 
-    private void UpdateHealthSlider()
+    public void UpdateHealthSlider()
     {
         if (healthSlider == null)
         {

@@ -175,6 +175,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Bag"",
+                    ""type"": ""Button"",
+                    ""id"": ""e962c0f9-7269-4352-85e3-fe6666633055"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -232,6 +241,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Keyboard"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""992f1b56-5bf3-4a83-a47b-0059a1fb2d27"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Bag"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -277,6 +297,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Inventory
         m_Inventory = asset.FindActionMap("Inventory", throwIfNotFound: true);
         m_Inventory_Keyboard = m_Inventory.FindAction("Keyboard", throwIfNotFound: true);
+        m_Inventory_Bag = m_Inventory.FindAction("Bag", throwIfNotFound: true);
         // PauseGame
         m_PauseGame = asset.FindActionMap("PauseGame", throwIfNotFound: true);
         m_PauseGame_Pause = m_PauseGame.FindAction("Pause", throwIfNotFound: true);
@@ -450,11 +471,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Inventory;
     private List<IInventoryActions> m_InventoryActionsCallbackInterfaces = new List<IInventoryActions>();
     private readonly InputAction m_Inventory_Keyboard;
+    private readonly InputAction m_Inventory_Bag;
     public struct InventoryActions
     {
         private @PlayerControls m_Wrapper;
         public InventoryActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Keyboard => m_Wrapper.m_Inventory_Keyboard;
+        public InputAction @Bag => m_Wrapper.m_Inventory_Bag;
         public InputActionMap Get() { return m_Wrapper.m_Inventory; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -467,6 +490,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Keyboard.started += instance.OnKeyboard;
             @Keyboard.performed += instance.OnKeyboard;
             @Keyboard.canceled += instance.OnKeyboard;
+            @Bag.started += instance.OnBag;
+            @Bag.performed += instance.OnBag;
+            @Bag.canceled += instance.OnBag;
         }
 
         private void UnregisterCallbacks(IInventoryActions instance)
@@ -474,6 +500,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Keyboard.started -= instance.OnKeyboard;
             @Keyboard.performed -= instance.OnKeyboard;
             @Keyboard.canceled -= instance.OnKeyboard;
+            @Bag.started -= instance.OnBag;
+            @Bag.performed -= instance.OnBag;
+            @Bag.canceled -= instance.OnBag;
         }
 
         public void RemoveCallbacks(IInventoryActions instance)
@@ -550,6 +579,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IInventoryActions
     {
         void OnKeyboard(InputAction.CallbackContext context);
+        void OnBag(InputAction.CallbackContext context);
     }
     public interface IPauseGameActions
     {

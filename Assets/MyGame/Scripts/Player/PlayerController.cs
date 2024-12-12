@@ -10,6 +10,7 @@ public class PlayerController : Singleton<PlayerController>
 {
     [SerializeField] private GameObject UIStats;
     [SerializeField] private GameObject Resume;
+    public InventoryManager InventoryBag;
     public bool FacingLeft { get { return facingLeft; } }
 
     [SerializeField] private float moveSpeed = 2f;
@@ -35,7 +36,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         base.Awake();
 
-        playerControls = new PlayerControls();
+		playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -45,11 +46,14 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Start()
     {
-        playerControls.Combat.Dash.performed += _ => Dash();
+		InventoryBag = GameObject.Find("UI").GetComponent<InventoryManager>();
+
+		playerControls.Combat.Dash.performed += _ => Dash();
         playerControls.Combat.Stats.performed += _ => Stat();
         playerControls.PauseGame.Pause.performed += _ => OnClickResume();
+        playerControls.Inventory.Bag.performed += _ => OpenInventory();
 
-        Inventory.Instance.EquipStartingWeapon();
+		Inventory.Instance.EquipStartingWeapon();
     }
 
     private void Stat()
@@ -71,6 +75,23 @@ public class PlayerController : Singleton<PlayerController>
         }
         else Time.timeScale = 0;
     }
+
+    //Open Inventory UI
+    private void OpenInventory()
+    {
+        if (!InventoryBag.menuActivated)
+        {
+			Time.timeScale = 0;
+			InventoryBag.menuActivated = true;
+			InventoryBag.InventoryMenu.SetActive(true);
+		}
+        else
+        {
+			Time.timeScale = 1;
+			InventoryBag.menuActivated = false;
+			InventoryBag.InventoryMenu.SetActive(false);
+		}
+	}
 
     private void OnEnable()
     {

@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: myTrailRenderer
       value: 
       objectReference: {fileID: 1081044379}
+    - target: {fileID: 4674322298397381066, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 1678075635523837041, guid: f40f5e7621309604789ce9f687d91560, type: 3}
     - target: {fileID: 6998588295889080443, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: -52.988003
@@ -252,6 +256,10 @@ PrefabInstance:
       propertyPath: roaming
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8618168548426237767, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 1678075635523837041, guid: f40f5e7621309604789ce9f687d91560, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -281,6 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: {fileID: 3954064876671037913, guid: 971bb10749a560548b0cde07ca5b12dd, type: 3}
   health: {fileID: 3954064876671037913, guid: afc1d330a53e16643adc3c0ce304db76, type: 3}
+  potion: {fileID: 0}
 --- !u!114 &419526873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +323,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 3607946823619979926, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 1678075635523837041, guid: f40f5e7621309604789ce9f687d91560, type: 3}
     - target: {fileID: 9159721060627069771, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -63.39
@@ -613,6 +626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: {fileID: 3954064876671037913, guid: 971bb10749a560548b0cde07ca5b12dd, type: 3}
   health: {fileID: 3954064876671037913, guid: afc1d330a53e16643adc3c0ce304db76, type: 3}
+  potion: {fileID: 0}
 --- !u!114 &701709198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -808,6 +822,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 3607946823619979926, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 1678075635523837041, guid: f40f5e7621309604789ce9f687d91560, type: 3}
     - target: {fileID: 9159721060627069771, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -63.51
@@ -858,11 +876,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9159721060627069771, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
   m_PrefabInstance: {fileID: 969541180}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &986142081 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7838241754009366104, guid: e95dbf83ea5fa164e8184b40e7c59ba7, type: 3}
-  m_PrefabInstance: {fileID: 1208190381}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1024398220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 600462862770733316, guid: ff8ab5b0691e84e41b72bf9335d04633, type: 3}
@@ -882,6 +895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: {fileID: 3954064876671037913, guid: 971bb10749a560548b0cde07ca5b12dd, type: 3}
   health: {fileID: 3954064876671037913, guid: afc1d330a53e16643adc3c0ce304db76, type: 3}
+  potion: {fileID: 0}
 --- !u!114 &1024398225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,7 +976,7 @@ PrefabInstance:
     - target: {fileID: 9095116781906590122, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
       propertyPath: Resume
       value: 
-      objectReference: {fileID: 986142081}
+      objectReference: {fileID: 0}
     - target: {fileID: 9095116781906590122, guid: f19e56ad433699a4e946e0c04a1d58bd, type: 3}
       propertyPath: UIStats
       value: 
@@ -1002,6 +1016,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 3607946823619979926, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 1678075635523837041, guid: f40f5e7621309604789ce9f687d91560, type: 3}
     - target: {fileID: 9159721060627069771, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -35.86
@@ -1161,6 +1179,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 589489332934759559, guid: e95dbf83ea5fa164e8184b40e7c59ba7, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859541671552041, guid: e95dbf83ea5fa164e8184b40e7c59ba7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859541671552041, guid: e95dbf83ea5fa164e8184b40e7c59ba7, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5736800988896255063, guid: e95dbf83ea5fa164e8184b40e7c59ba7, type: 3}
@@ -1546,6 +1572,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 3607946823619979926, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 1678075635523837041, guid: f40f5e7621309604789ce9f687d91560, type: 3}
     - target: {fileID: 9159721060627069771, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -61.96
@@ -1616,6 +1646,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 3607946823619979926, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 1678075635523837041, guid: f40f5e7621309604789ce9f687d91560, type: 3}
     - target: {fileID: 9159721060627069771, guid: 3d09a18469b900e438bad7a25d2536cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -48.27
@@ -1678,6 +1712,10 @@ PrefabInstance:
       propertyPath: myTrailRenderer
       value: 
       objectReference: {fileID: 1081044379}
+    - target: {fileID: 4674322298397381066, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 1678075635523837041, guid: f40f5e7621309604789ce9f687d91560, type: 3}
     - target: {fileID: 6998588295889080443, guid: a43c03b02984a8b49bf2f32501d698ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: -66.411964
@@ -1751,6 +1789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: {fileID: 3954064876671037913, guid: 971bb10749a560548b0cde07ca5b12dd, type: 3}
   health: {fileID: 3954064876671037913, guid: afc1d330a53e16643adc3c0ce304db76, type: 3}
+  potion: {fileID: 0}
 --- !u!114 &1698170134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,6 +1822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: {fileID: 3954064876671037913, guid: 971bb10749a560548b0cde07ca5b12dd, type: 3}
   health: {fileID: 3954064876671037913, guid: afc1d330a53e16643adc3c0ce304db76, type: 3}
+  potion: {fileID: 0}
 --- !u!114 &2044857618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1860,6 +1900,10 @@ PrefabInstance:
       propertyPath: roaming
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8618168548426237767, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 1678075635523837041, guid: f40f5e7621309604789ce9f687d91560, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2124,6 +2168,10 @@ PrefabInstance:
       propertyPath: roaming
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8618168548426237767, guid: b6083dee0acfa794cbc6323b4c5d8b91, type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 1678075635523837041, guid: f40f5e7621309604789ce9f687d91560, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

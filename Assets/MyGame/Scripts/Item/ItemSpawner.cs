@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject coin, health;
+    [SerializeField] private GameObject coin, health, potion;
 
     private bool isEnemy = false;
 
@@ -22,6 +22,10 @@ public class ItemSpawner : MonoBehaviour
         {
             Instantiate(health, transform.position, Quaternion.identity);
         }
+        else if (!isEnemy && randomNum == 2)
+        {
+			Instantiate(potion, transform.position, Quaternion.identity);
+		}
         else
         {
             int randomAmountOfCoin = Random.Range(1, 10);

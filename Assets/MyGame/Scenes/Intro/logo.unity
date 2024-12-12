@@ -390,6 +390,10 @@ PrefabInstance:
       value: Logo
       objectReference: {fileID: 0}
     - target: {fileID: 7638109963971942959, guid: 1c993ee913af9ef40a08024324b602a7, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 818a080fa168e7e499e3933c8d062af2, type: 3}
+    - target: {fileID: 7638109963971942959, guid: 1c993ee913af9ef40a08024324b602a7, type: 3}
       propertyPath: m_TargetCamera
       value: 
       objectReference: {fileID: 1869467609}

@@ -9,7 +9,8 @@ public class Item : MonoBehaviour
     private enum Items
     {
         Coin,
-        Health
+        Health,
+        Potion
     }
 
     [SerializeField] private Items itemType;
@@ -96,6 +97,8 @@ public class Item : MonoBehaviour
                 break;
             case Items.Health:
                 PlayerHealth.Instance.Healing();
+                break;
+            case Items.Potion:
                 break;
         }
     }

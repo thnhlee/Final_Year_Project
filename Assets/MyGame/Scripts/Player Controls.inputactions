@@ -153,6 +153,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Bag",
+                    "type": "Button",
+                    "id": "e962c0f9-7269-4352-85e3-fe6666633055",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -208,6 +217,17 @@
                     "processors": "Scale(factor=5)",
                     "groups": "",
                     "action": "Keyboard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "992f1b56-5bf3-4a83-a47b-0059a1fb2d27",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bag",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
