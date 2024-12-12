@@ -569,6 +569,7 @@ MonoBehaviour:
   background: {fileID: 8300000, guid: e9aa51592ef354c4ba9953918d692245, type: 3}
   portalIn: {fileID: 8300000, guid: a8b3d4fd30defdc4ebd7b2d26b301125, type: 3}
   portalOut: {fileID: 8300000, guid: ab60f3c7c867f6b48825170a463a74c5, type: 3}
+  Dash: {fileID: 8300000, guid: 54c23c8b6f1fb684f87139b53029e352, type: 3}
 --- !u!4 &823922899
 Transform:
   m_ObjectHideFlags: 0

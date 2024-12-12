@@ -30,13 +30,17 @@ public class PlayerController : Singleton<PlayerController>
 
     private bool facingLeft = false;
     private bool isDashing = false;
-
+    AudioManager audioManager;
 
     protected override void Awake()
     {
         base.Awake();
 
-		playerControls = new PlayerControls();
+        GameObject[] audioGameObjects = GameObject.FindGameObjectsWithTag("Audio");
+        //Find the first GameObject with the AudioManager component
+        audioManager = Array.Find(audioGameObjects, go => go.GetComponent<AudioManager>() != null)?.GetComponent<AudioManager>();
+
+        playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -168,6 +172,8 @@ public class PlayerController : Singleton<PlayerController>
     //DASH
     private void Dash()
     {
+
+        audioManager.PlaySFX(audioManager.Dash);
         if (!isDashing)
         {
             isDashing = true;

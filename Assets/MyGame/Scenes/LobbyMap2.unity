@@ -1149,6 +1149,7 @@ MonoBehaviour:
   background: {fileID: 8300000, guid: fe0d281a401ac8c48900c2a8ed679283, type: 3}
   portalIn: {fileID: 8300000, guid: a8b3d4fd30defdc4ebd7b2d26b301125, type: 3}
   portalOut: {fileID: 8300000, guid: ab60f3c7c867f6b48825170a463a74c5, type: 3}
+  Dash: {fileID: 8300000, guid: 54c23c8b6f1fb684f87139b53029e352, type: 3}
 --- !u!4 &1223536196
 Transform:
   m_ObjectHideFlags: 0
@@ -1583,6 +1584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: {fileID: 3954064876671037913, guid: 971bb10749a560548b0cde07ca5b12dd, type: 3}
   health: {fileID: 3954064876671037913, guid: afc1d330a53e16643adc3c0ce304db76, type: 3}
+  potion: {fileID: 0}
 --- !u!114 &1707929846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2073,6 +2075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: {fileID: 3954064876671037913, guid: 971bb10749a560548b0cde07ca5b12dd, type: 3}
   health: {fileID: 3954064876671037913, guid: afc1d330a53e16643adc3c0ce304db76, type: 3}
+  potion: {fileID: 0}
 --- !u!1 &3697434113432623136
 GameObject:
   m_ObjectHideFlags: 0
