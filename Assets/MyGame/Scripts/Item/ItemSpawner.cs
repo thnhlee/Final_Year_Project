@@ -28,7 +28,7 @@ public class ItemSpawner : MonoBehaviour
 		}
         else
         {
-            int randomAmountOfCoin = Random.Range(1, 10);
+            int randomAmountOfCoin = Random.Range(1, 20);
             if(randomAmountOfCoin == 2 || randomAmountOfCoin == 3)
             {
                 for (int i = 0; i < randomAmountOfCoin; i++)

@@ -4,22 +4,21 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
-    //===Item Data===//
+    //Item Data
     public string itemName;
     public int quantity;
     public Sprite itemSprite;
     public bool isFull;
     public string itemDescription;
 
-    [SerializeField]
-    private int maxNumberOfItems;
+    [SerializeField] private int maxNumberOfItems;
 
-    //===Item Slot ===//
+    //Item Slot
     [SerializeField] private TMP_Text quantityText;
     [SerializeField] private Image itemImage;
     [SerializeField] private Button itemUseButton;
 
-    //===Item Description Slot ===//
+    //Item Description Slot
     public Image itemDescriptionImage;
     public Sprite emptySprite;
     public TMP_Text itemDescriptionName;
@@ -38,7 +37,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         //Check to see if the slot is already full
         if (isFull)
+        {
             return quantity;
+        }
 
         this.itemName = itemName;
 
@@ -48,6 +49,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         this.itemDescription = itemDescription;
 
         this.quantity += quantity;
+
         if (this.quantity >= maxNumberOfItems)
         {
             quantityText.text = maxNumberOfItems.ToString();
@@ -57,11 +59,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             int extraItems = this.quantity - maxNumberOfItems;
             this.quantity = maxNumberOfItems;
 
-            // Return leftover items
+            //Return leftover items
             return extraItems;
         }
 
-        // Update quantity text
+        //Update quantity text
         quantityText.text = this.quantity.ToString();
         quantityText.enabled = true;
         return 0;

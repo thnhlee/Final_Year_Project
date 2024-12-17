@@ -6,8 +6,6 @@ public class InventoryManager : MonoBehaviour
 	public GameObject InventoryMenu;
 	public bool menuActivated;
 
-	[Space]
-
 	[Header("Item Slot")]
 	public ItemSlot[] itemSlot;
 
