@@ -2,31 +2,31 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-     [Header("------------Audio Source-----------")]
-     [SerializeField] AudioSource musicSource;
-     [SerializeField] AudioSource SFXSource;
+    [Header("------------Audio Source-----------")]
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioSource SFXSource;
 
-     [Header("------------Audio Clip-----------")]
+    [Header("------------Audio Clip-----------")]
 
 
-     public AudioClip background;
-     public AudioClip portalIn;
-     public AudioClip portalOut;
-     public AudioClip Dash;
+    public AudioClip background;
+    public AudioClip portalIn;
+    public AudioClip portalOut;
+    public AudioClip Dash;
 
-    private static AudioManager instance;
+    public static AudioManager instance;
 
-    private void Awake() 
-    { 
-        if (instance == null) 
-        { 
-            instance = this; DontDestroyOnLoad(gameObject); 
-        } 
-        else 
-        { 
-            Destroy(gameObject); 
-        } 
-    }
+    //private void Awake() 
+    //{ 
+    //    if (instance == null) 
+    //    { 
+    //        instance = this; DontDestroyOnLoad(gameObject); 
+    //    } 
+    //    else 
+    //    { 
+    //        Destroy(gameObject); 
+    //    } 
+    //}
 
     private void Start()
      {
@@ -35,18 +35,23 @@ public class AudioManager : MonoBehaviour
      }
 
      private void Update()
+     {
+        if (PlayerHealth.Instance.isDead)
         {
-            // Kiểm tra nếu nhân vật đã chết thì dừng nhạc nền
-            if (PlayerHealth.Instance.isDead)
-            {
-                musicSource.Stop();
-            }
+            musicSource.Stop();
         }
+     }
 
 
      public void PlaySFX(AudioClip clip)
      {
         SFXSource.PlayOneShot(clip);
      }
+
+
+    public void PlayDashSound()
+    {
+        SFXSource.PlayOneShot(Dash);
+    }
 
 }

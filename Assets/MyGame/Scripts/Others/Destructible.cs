@@ -27,18 +27,21 @@ public class Destructible : MonoBehaviour
                 collisionCount++;
                 if (collisionCount >= requiredCollisions)
                 {
-                    GetComponent<ItemSpawner>().DropItem();
-                    Instantiate(destroyVFX, transform.position, Quaternion.identity);
-                    Destroy(gameObject);
+                    DestroyObject();
                     playerLight.enabled = true;
                 }
             }
             else
             {
-                GetComponent<ItemSpawner>().DropItem();
-                Instantiate(destroyVFX, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                DestroyObject();
             }
         }
+    }
+
+    private void DestroyObject()
+    {
+        GetComponent<ItemSpawner>().DropItem();
+        Instantiate(destroyVFX, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

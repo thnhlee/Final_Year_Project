@@ -172,8 +172,8 @@ public class PlayerController : Singleton<PlayerController>
     //DASH
     private void Dash()
     {
+        
 
-        audioManager.PlaySFX(audioManager.Dash);
         if (!isDashing)
         {
             isDashing = true;
